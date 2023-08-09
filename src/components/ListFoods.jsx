@@ -3,7 +3,6 @@ import { useGetFoodsQuery } from "../api/apiSlice";
 import photo from "../assets/img-foto.jpg";
 const ListFoods = () => {
     const { data: food, isLoading, isError } = useGetFoodsQuery();
-    console.log(food);
 
     // else if (isError) return <div>Hay error</div>;
 
