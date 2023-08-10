@@ -1,6 +1,6 @@
 import React from "react";
-import { useGetFoodsQuery, useGetOneFoodQuery } from "../api/apiSlice";
-import photo from "../assets/img-foto.jpg";
+import { useGetFoodsQuery } from "../api/apiSlice";
+
 import { useNavigate } from "react-router-dom";
 const ListFoods = () => {
     const { data: food, isLoading, isError } = useGetFoodsQuery();

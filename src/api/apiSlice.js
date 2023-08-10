@@ -8,11 +8,13 @@ export const foodApi = createApi({
         baseUrl: "https://backend-restfood.vercel.app/apiRestFood",
     }),
     endpoints: (builder) => ({
+        // get all foods
         getFoods: builder.query({
             query: () => "/platos",
         }),
+        // get one food
         getOneFood: builder.query({
-            query: (id) => `/platos/${id}}`,
+            query: (id) => `/platos/${id}`,
         }),
     }),
 });
