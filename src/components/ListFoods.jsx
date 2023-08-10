@@ -8,7 +8,7 @@ import { Button, Card } from "react-bootstrap";
 const ListFoods = () => {
     const { data: food, isLoading, isError } = useGetFoodsQuery();
     const navigate = useNavigate();
-
+    const iteraction = [1, 2, 3, 1, 56, 5, 56];
     const handleDetail = (id) => {
         navigate(`/detalles/${id}`);
     };
@@ -16,16 +16,40 @@ const ListFoods = () => {
     return (
         <>
             {/* 
-         <RotatingLines
-                            strokeColor="grey"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="96"
-                            visible={true}
-                        />
+         
         */}
             {isLoading ? (
-                <h1>cargando</h1>
+                <div className="container">
+                    <div className="row ">
+                        {iteraction.map(() => (
+                            <Card style={{ width: "18rem" }}>
+                                <RotatingLines
+                                    strokeColor="grey"
+                                    strokeWidth="5"
+                                    animationDuration="0.75"
+                                    width="96"
+                                    visible={true}
+                                />
+                                <Card.Body>
+                                    <Placeholder as={Card.Title} animation="glow">
+                                        <Placeholder xs={6} />
+                                    </Placeholder>
+                                    <Placeholder as={Card.Text} animation="glow">
+                                        <Placeholder xs={7} /> <Placeholder xs={4} />{" "}
+                                        <Placeholder xs={4} /> <Placeholder xs={6} />{" "}
+                                        <Placeholder xs={8} />
+                                    </Placeholder>
+                                </Card.Body>
+                                <Card.Footer>
+                                    <div className="d-flex justify-content-between">
+                                        <Placeholder.Button variant="primary" xs={3} />
+                                        <Placeholder.Button variant="danger" xs={3} />
+                                    </div>
+                                </Card.Footer>
+                            </Card>
+                        ))}
+                    </div>
+                </div>
             ) : (
                 // <div className="container">
                 //     <div className="row">
