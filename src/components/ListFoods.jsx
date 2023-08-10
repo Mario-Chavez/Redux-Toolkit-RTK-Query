@@ -8,7 +8,8 @@ import { Button, Card } from "react-bootstrap";
 const ListFoods = () => {
     const { data: food, isLoading, isError } = useGetFoodsQuery();
     const navigate = useNavigate();
-    const iteraction = [1, 2, 3, 1, 56, 5, 56];
+    const iteraction = new Array(19).fill(null); //array mock
+
     const handleDetail = (id) => {
         navigate(`/detalles/${id}`);
     };
@@ -21,15 +22,21 @@ const ListFoods = () => {
             {isLoading ? (
                 <div className="container">
                     <div className="row ">
-                        {iteraction.map(() => (
-                            <Card style={{ width: "18rem" }}>
-                                <RotatingLines
-                                    strokeColor="grey"
-                                    strokeWidth="5"
-                                    animationDuration="0.75"
-                                    width="96"
-                                    visible={true}
-                                />
+                        {iteraction.map((i, index) => (
+                            <Card
+                                key={index}
+                                style={{ width: "18rem" }}
+                                className="my-2 mx-2"
+                            >
+                                <div className="mx-auto">
+                                    <RotatingLines
+                                        strokeColor="grey"
+                                        strokeWidth="5"
+                                        animationDuration="0.75"
+                                        width="96"
+                                        visible={true}
+                                    />
+                                </div>
                                 <Card.Body>
                                     <Placeholder as={Card.Title} animation="glow">
                                         <Placeholder xs={6} />
@@ -51,38 +58,11 @@ const ListFoods = () => {
                     </div>
                 </div>
             ) : (
-                // <div className="container">
-                //     <div className="row">
-                //         {food.map((food) => (
-                //             <div key={food._id} className="col-md-3 my-2 ">
-                //                 <div className="card p-2">
-                //                     <img src={food.imagen} alt="imagen" />
-
-                //                     <div className="card-body">
-                //                         <h5 className="card-title">{`${food.nombre}`}</h5>
-                //                         <h5 className="card-text">{`${food.categoria}`}</h5>
-                //                     </div>
-                //                     <button
-                //                         className="btn btn-info my-2"
-                //                         onClick={() => handleDetail(food._id)}
-                //                     >
-                //                         detalle
-                //                     </button>
-                //                     <button
-                //                         className="btn btn-danger my-2"
-                //                         onClick={() => handleDelet(user.id)}
-                //                     >
-                //                         eliminar
-                //                     </button>
-                //                 </div>
-                //             </div>
-                //         ))}
-                //     </div>
-                // </div>
                 <div className="container">
                     <div className="row ">
                         {food.map((food) => (
                             <Card
+                                key={food._id}
                                 style={{ width: "18rem" }}
                                 className="col-md-3 my-2 mx-2"
                             >
