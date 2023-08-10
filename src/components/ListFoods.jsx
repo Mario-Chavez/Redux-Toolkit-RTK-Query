@@ -1,8 +1,14 @@
 import React from "react";
-import { useGetFoodsQuery } from "../api/apiSlice";
+import { useGetFoodsQuery, useGetOneFoodQuery } from "../api/apiSlice";
 import photo from "../assets/img-foto.jpg";
+import { useNavigate } from "react-router-dom";
 const ListFoods = () => {
     const { data: food, isLoading, isError } = useGetFoodsQuery();
+    const navigate = useNavigate();
+
+    const handleDetail = (id) => {
+        navigate(`/detalles/${id}`);
+    };
 
     return (
         <>
@@ -22,7 +28,7 @@ const ListFoods = () => {
                                     </div>
                                     <button
                                         className="btn btn-info my-2"
-                                        onClick={() => handleDelet(user.id)}
+                                        onClick={() => handleDetail(food._id)}
                                     >
                                         detalle
                                     </button>

@@ -10,7 +10,7 @@ function App() {
             <Navbar />
             <Routes>
                 <Route exact path="/" element={<ListFoods />}></Route>
-                <Route exact path="/detalles" element={<Detail />}></Route>
+                <Route exact path="/detalles/:id" element={<Detail />}></Route>
                 {/*<Route exact path="/edit-list/:id" element={<Form />}></Route> */}
             </Routes>
         </BrowserRouter>
