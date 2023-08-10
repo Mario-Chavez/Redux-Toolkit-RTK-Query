@@ -4,8 +4,6 @@ import photo from "../assets/img-foto.jpg";
 const ListFoods = () => {
     const { data: food, isLoading, isError } = useGetFoodsQuery();
 
-    // else if (isError) return <div>Hay error</div>;
-
     return (
         <>
             {isLoading ? (
@@ -22,6 +20,12 @@ const ListFoods = () => {
                                         <h5 className="card-title">{`${food.nombre}`}</h5>
                                         <h5 className="card-text">{`${food.categoria}`}</h5>
                                     </div>
+                                    <button
+                                        className="btn btn-info my-2"
+                                        onClick={() => handleDelet(user.id)}
+                                    >
+                                        detalle
+                                    </button>
                                     <button
                                         className="btn btn-danger my-2"
                                         onClick={() => handleDelet(user.id)}

@@ -11,6 +11,9 @@ export const foodApi = createApi({
         getFoods: builder.query({
             query: () => "/platos",
         }),
+        getOneFood: builder.query({
+            query: (id) => `/platos/${id}}`,
+        }),
     }),
 });
-export const { useGetFoodsQuery } = foodApi;
+export const { useGetFoodsQuery, useGetOneFoodQuery } = foodApi;
