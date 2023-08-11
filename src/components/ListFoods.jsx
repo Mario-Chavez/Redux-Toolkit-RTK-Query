@@ -7,7 +7,7 @@ import LoadingCards from "./LoadingCards";
 const ListFoods = () => {
     const { data: food, isLoading, isError } = useGetFoodsQuery();
     const navigate = useNavigate();
-
+    console.log(food);
     const handleDetail = (id) => {
         navigate(`/detalles/${id}`);
     };
