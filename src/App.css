@@ -1,6 +1,6 @@
 /* slider de product */
 .img-tarjeta-producto {
-  max-width: 12rem;
+  max-width: 15rem;
   height: 12rem;
   position: absolute;
   top: 0%;
@@ -18,4 +18,8 @@
   background-color: var(--color-primario);
   border-radius: 1rem;
   
+}
+.card-body-text{
+  position: absolute;
+  bottom: 50px;
 }

@@ -4,7 +4,7 @@ import { useGetFoodsQuery } from "../api/apiSlice";
 
 const ProductSlider = () => {
     const { data: products, isLoading, isError } = useGetFoodsQuery();
-    const chunkSize = 4;
+    const chunkSize = 3;
     const productGroups = [];
 
     if (products) {
@@ -24,15 +24,23 @@ const ProductSlider = () => {
                                 {group.map((product, innerIndex) => (
                                     <Col key={innerIndex}>
                                         <Card className="card-body bg-black">
-                                            <Card.Img
-                                                className="img-tarjeta-producto"
-                                                variant="top"
-                                                src={product.imagen}
-                                            />
-                                            <Card.Body>
-                                                <Card.Title>{product.nombre}</Card.Title>
-                                                <Card.Text>{product.categoria}</Card.Text>
-                                                <Card.Text>${product.precio}</Card.Text>
+                                            <Card.Body className="text-bg-dark mt">
+                                                <Card.Img
+                                                    className="img-tarjeta-producto"
+                                                    variant="top"
+                                                    src={product.imagen}
+                                                />
+                                                <div className="card-body-text">
+                                                    <Card.Title>
+                                                        {product.nombre}
+                                                    </Card.Title>
+                                                    <Card.Text>
+                                                        {product.categoria}
+                                                    </Card.Text>
+                                                    <Card.Text>
+                                                        ${product.precio}
+                                                    </Card.Text>
+                                                </div>
                                             </Card.Body>
                                         </Card>
                                     </Col>

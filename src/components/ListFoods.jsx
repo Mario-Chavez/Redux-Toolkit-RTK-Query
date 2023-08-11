@@ -17,8 +17,8 @@ const ListFoods = () => {
             {isLoading ? (
                 <LoadingCards />
             ) : (
-                <div className="container">
-                    <div className="row ">
+                <div className="container d-flex justify-align-content-center">
+                    <div className="row">
                         {food.map((food) => (
                             <Card
                                 key={food._id}
