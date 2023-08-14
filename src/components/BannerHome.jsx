@@ -25,7 +25,6 @@ const BannerHome = () => {
                     </p>
                 </Col>
             </Row>
-            <Container></Container>
         </div>
     );
 };

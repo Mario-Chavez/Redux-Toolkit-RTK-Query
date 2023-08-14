@@ -22,13 +22,23 @@ const ListFoods = () => {
                         {food.map((food) => (
                             <Card
                                 key={food._id}
-                                style={{ width: "18rem" }}
-                                className="col-md-3 my-2 mx-2"
+                                style={{
+                                    width: "18rem",
+                                    maxHeight: "40rem",
+                                }}
+                                className="col-md-3 my-2 mx-2 bg-dark text-bg-dark"
                             >
                                 <Card.Img variant="top" src={food.imagen} />
-                                <Card.Body>
+                                <Card.Body style={{ overflow: "hidden" }}>
                                     <Card.Title>{`${food.nombre}`}</Card.Title>
                                     <Card.Text>{`${food.categoria}`}</Card.Text>
+
+                                    <Card.Text>
+                                        <span className=" ">
+                                            {" "}
+                                            {`${food.descripcion}`}
+                                        </span>
+                                    </Card.Text>
                                 </Card.Body>
                                 <Card.Footer>
                                     <div className="d-flex justify-content-between">
