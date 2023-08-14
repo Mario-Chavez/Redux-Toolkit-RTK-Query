@@ -50,7 +50,7 @@ const ListFoods = () => {
                                 <Card.Footer>
                                     <div className="d-flex justify-content-between">
                                         <Button
-                                            variant="primary"
+                                            style={{ backgroundColor: "#164475" }}
                                             onClick={() => handleDetail(food._id)}
                                         >
                                             Detail
