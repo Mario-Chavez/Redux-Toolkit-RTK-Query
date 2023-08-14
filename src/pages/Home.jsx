@@ -1,12 +1,13 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+
 import ListFoods from "../components/ListFoods";
 import ProductSlider from "../components/ProductSlider";
+import Header from "../components/Header";
 
 const Home = () => {
     return (
         <div>
-            <Navbar />
+            <Header />
             <ListFoods />
             {/* <ProductSlider /> */}
         </div>

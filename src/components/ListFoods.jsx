@@ -17,7 +17,7 @@ const ListFoods = () => {
             {isLoading ? (
                 <LoadingCards />
             ) : (
-                <div className="container ">
+                <div className="container  background-main">
                     <div className="row justify-content-center">
                         {food.map((food) => (
                             <Card
