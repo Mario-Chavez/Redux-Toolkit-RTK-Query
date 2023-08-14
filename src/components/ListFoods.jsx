@@ -28,7 +28,14 @@ const ListFoods = () => {
                                 }}
                                 className="col-md-3 my-2 mx-2 bg-dark text-bg-dark"
                             >
-                                <Card.Img variant="top" src={food.imagen} />
+                                <Card.Img
+                                    variant="top"
+                                    style={{
+                                        height: "15rem",
+                                        objectFit: "cover",
+                                    }}
+                                    src={food.imagen}
+                                />
                                 <Card.Body style={{ overflow: "hidden" }}>
                                     <Card.Title>{`${food.nombre}`}</Card.Title>
                                     <Card.Text>{`${food.categoria}`}</Card.Text>
