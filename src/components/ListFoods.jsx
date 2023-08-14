@@ -37,8 +37,8 @@ const ListFoods = () => {
                                     src={food.imagen}
                                 />
                                 <Card.Body style={{ overflow: "hidden" }}>
-                                    <Card.Title>{`${food.nombre}`}</Card.Title>
-                                    <Card.Text>{`${food.categoria}`}</Card.Text>
+                                    <Card.Title className="fs-3 fw-bolder my-2 ">{`${food.nombre}`}</Card.Title>
+                                    <Card.Text className="fs-4  ">{`- ${food.categoria}`}</Card.Text>
 
                                     <Card.Text>
                                         <span className=" ">
