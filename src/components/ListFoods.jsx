@@ -17,54 +17,56 @@ const ListFoods = () => {
             {isLoading ? (
                 <LoadingCards />
             ) : (
-                <div className="container  ">
-                    <div className="row justify-content-center">
-                        {food.map((food) => (
-                            <Card
-                                key={food._id}
-                                style={{
-                                    width: "18rem",
-                                    maxHeight: "40rem",
-                                }}
-                                className="col-md-3 my-2 mx-2 bg-dark text-bg-dark"
-                            >
-                                <Card.Img
-                                    variant="top"
+                <div style={{ backgroundColor: "#212529" }}>
+                    <div className="container">
+                        <div className="row justify-content-center">
+                            {food.map((food) => (
+                                <Card
+                                    key={food._id}
                                     style={{
-                                        height: "15rem",
-                                        objectFit: "cover",
+                                        width: "18rem",
+                                        maxHeight: "40rem",
                                     }}
-                                    src={food.imagen}
-                                />
-                                <Card.Body style={{ overflow: "hidden" }}>
-                                    <Card.Title className="fs-3 fw-bolder my-2 ">{`${food.nombre}`}</Card.Title>
-                                    <Card.Text className="fs-4  ">{`- ${food.categoria}`}</Card.Text>
+                                    className="col-md-3 my-3 mx-2 "
+                                >
+                                    <Card.Img
+                                        variant="top"
+                                        style={{
+                                            height: "15rem",
+                                            objectFit: "cover",
+                                        }}
+                                        src={food.imagen}
+                                    />
+                                    <Card.Body style={{ overflow: "hidden" }}>
+                                        <Card.Title className="fs-3 fw-bolder my-2 ">{`${food.nombre}`}</Card.Title>
+                                        <Card.Text className="fs-4  ">{`- ${food.categoria}`}</Card.Text>
 
-                                    <Card.Text>
-                                        <span className=" ">
-                                            {" "}
-                                            {`${food.descripcion}`}
-                                        </span>
-                                    </Card.Text>
-                                </Card.Body>
-                                <Card.Footer>
-                                    <div className="d-flex justify-content-between">
-                                        <Button
-                                            style={{ backgroundColor: "#164475" }}
-                                            onClick={() => handleDetail(food._id)}
-                                        >
-                                            Detail
-                                        </Button>
-                                        <Button
-                                            variant="danger"
-                                            // onClick={() => handleDelet(user.id)}
-                                        >
-                                            Delet
-                                        </Button>
-                                    </div>
-                                </Card.Footer>
-                            </Card>
-                        ))}
+                                        <Card.Text>
+                                            <span className=" ">
+                                                {" "}
+                                                {`${food.descripcion}`}
+                                            </span>
+                                        </Card.Text>
+                                    </Card.Body>
+                                    <Card.Footer>
+                                        <div className="d-flex justify-content-between">
+                                            <Button
+                                                style={{ backgroundColor: "#164475" }}
+                                                onClick={() => handleDetail(food._id)}
+                                            >
+                                                Detail
+                                            </Button>
+                                            <Button
+                                                variant="danger"
+                                                // onClick={() => handleDelet(user.id)}
+                                            >
+                                                Delet
+                                            </Button>
+                                        </div>
+                                    </Card.Footer>
+                                </Card>
+                            ))}
+                        </div>
                     </div>
                 </div>
             )}
