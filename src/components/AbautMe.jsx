@@ -1,6 +1,12 @@
 import React from "react";
 import { Col, Container, Row, Image, Button } from "react-bootstrap";
 import chef from "../assets/img-home.jpg";
+import {
+    AiOutlineFacebook,
+    AiOutlineInstagram,
+    AiOutlineTwitter,
+    AiOutlineYoutube,
+} from "react-icons/ai";
 
 const AbautMe = () => {
     return (
@@ -42,6 +48,12 @@ const AbautMe = () => {
                     </Col>
                     <Col sm={12} lg={6} md={12}>
                         <Image src={chef} className="w-100 photo-home" />
+                        <div className="text-bg-dark my-3 p d-flex justify-content-around">
+                            <AiOutlineFacebook size={35} />
+                            <AiOutlineTwitter size={35} />
+                            <AiOutlineInstagram size={35} />
+                            <AiOutlineYoutube size={35} />
+                        </div>
                     </Col>
                 </Row>
             </Container>
