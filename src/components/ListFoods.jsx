@@ -17,8 +17,18 @@ const ListFoods = () => {
             {isLoading ? (
                 <LoadingCards />
             ) : (
-                <div style={{ backgroundColor: "#212529" }}>
-                    <div className="container">
+                <div
+                    style={{
+                        backgroundColor: "#212529",
+                    }}
+                >
+                    <div
+                        className="container"
+                        style={{
+                            overflowY: "scroll",
+                            maxHeight: "50rem",
+                        }}
+                    >
                         <div className="row justify-content-center">
                             {food.map((food) => (
                                 <Card
