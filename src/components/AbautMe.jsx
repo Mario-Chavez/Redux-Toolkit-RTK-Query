@@ -17,7 +17,7 @@ const AbautMe = () => {
         >
             <Container className="pt-lg-5">
                 <Row className="justify-content-center text-center">
-                    <Col sm={12} lg={6} md={12}>
+                    <Col sm={12} lg={6} md={12} className="mt-2">
                         <div className="text-bg-dark">
                             <h1 className="title mb-5">Sobre Nosotros</h1>
                             <p>
@@ -40,7 +40,7 @@ const AbautMe = () => {
                             </p>
                         </div>
                         <Button
-                            className="mt-5"
+                            className="my-5"
                             style={{ backgroundColor: "#164475", width: "12rem" }}
                         >
                             Ver Mas
