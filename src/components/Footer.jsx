@@ -24,41 +24,31 @@ const Footer = () => {
                         <div className="col-md-4 text-center text-md-start">
                             <h3>INFORMACIÓN</h3>
                             <ul className="list-unstyled">
-                                <li className="py-1">
-                                    <Link to={"/restfood/acerca"}>
-                                        Acerca de nosotros
-                                    </Link>
+                                <li className="py-2">
+                                    <Link to={"/"}>Acerca de nosotros</Link>
                                 </li>
-                                <li className="py-1">
-                                    <Link to={"/restfood/informacion"}>
-                                        Información de entrega
-                                    </Link>
+                                <li className="py-2">
+                                    <Link to={"/"}>Información de entrega</Link>
                                 </li>
-                                <li className="py-1">
-                                    <Link to={"/restfood/politicas"}>
-                                        Políticas de privacidad
-                                    </Link>
+                                <li className="py-2">
+                                    <Link to={"/"}>Políticas de privacidad</Link>
                                 </li>
-                                <li className="py-1">
-                                    <Link to={"/restfood/terminos"}>
-                                        Términos y condiciones
-                                    </Link>
+                                <li className="py-2">
+                                    <Link to={"/"}>Términos y condiciones</Link>
                                 </li>
                             </ul>
                         </div>
                         <div className="col-md-4 text-center text-md-start">
                             <h3>MI CUENTA</h3>
                             <ul className="list-unstyled">
-                                <li className="py-1">
-                                    <Link to={"/restfood/historial"}>
-                                        Historial de pedidos
-                                    </Link>
+                                <li className="py-2">
+                                    <Link to={"/"}>Historial de pedidos</Link>
                                 </li>
-                                <li className="py-1">
-                                    <Link to={"/restfood/boletin"}>Boletín</Link>
+                                <li className="py-2">
+                                    <Link to={"/"}>Boletín</Link>
                                 </li>
-                                <li className="py-1">
-                                    <Link to={"/restfood/reembolso"}>Reembolsos</Link>
+                                <li className="py-2">
+                                    <Link to={"/"}>Reembolsos</Link>
                                 </li>
                             </ul>
                         </div>
@@ -91,7 +81,7 @@ const Footer = () => {
                                         {errors.email?.message}
                                     </div>
                                 </div>
-                                <button className="w-100" type="submit">
+                                <button className="w-100 text-bg-dark" type="submit">
                                     {enviandoEmail ? "Enviado" : "Enviar"}
                                 </button>
                             </form>
