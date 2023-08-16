@@ -6,9 +6,9 @@ const LoadingCards = () => {
     const iteraction = new Array(19).fill(null); //array mock
 
     return (
-        <div style={{ backgroundColor: "#212529" }}>
+        <div style={{ backgroundColor: "#212529" }} className="pt-5">
             <div className="container">
-                <div className="row ">
+                <div className="row justify-content-center">
                     {iteraction.map((i, index) => (
                         <Card
                             key={index}

@@ -25,26 +25,44 @@ const ClientsBanner = () => {
         };
     }, [animationCompleted]);
     return (
-        <div className="">
-            <Container>
+        <div className="text-center py-5">
+            <Container className="py-5">
                 <Row>
+                    <Col className="border-end border-2">
+                        <div id="counter">
+                            {isVisible ? (
+                                <div className="text-primary fs-4 fw-normal">
+                                    +<CountUp start={0} end={1500} duration={4.54} />
+                                </div>
+                            ) : (
+                                <div className="text-primary fs-4 fw-bold">0</div>
+                            )}
+                        </div>
+                        <div className="fs-4 fw-normal">Clientes</div>
+                    </Col>
+                    <Col className="border-end border-2">
+                        <div id="counter">
+                            {isVisible ? (
+                                <div className="text-primary fs-4 fw-normal">
+                                    +<CountUp start={0} end={350} duration={4.54} />
+                                </div>
+                            ) : (
+                                <div className="text-primary fs-4 fw-bold">0</div>
+                            )}
+                        </div>
+                        <div className="fs-4 fw-normal">Platos</div>
+                    </Col>
                     <Col>
                         <div id="counter">
                             {isVisible ? (
-                                <CountUp start={0} end={100} duration={4.54} />
+                                <div className="text-primary fs-4 fw-normal">
+                                    +<CountUp start={0} end={650} duration={4.54} />
+                                </div>
                             ) : (
-                                <h2>0</h2>
+                                <div className="text-primary fs-4 fw-bold">0</div>
                             )}
                         </div>
-                        <div>clientes</div>
-                    </Col>
-                    <Col>
-                        <div>numero</div>
-                        <div>clientes</div>
-                    </Col>
-                    <Col>
-                        <div>numero</div>
-                        <div>clientes</div>
+                        <div className="fs-4 fw-normal">Pedidos</div>
                     </Col>
                 </Row>
             </Container>

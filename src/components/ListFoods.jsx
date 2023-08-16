@@ -23,7 +23,7 @@ const ListFoods = () => {
                     }}
                 >
                     <h2 className="title text-bg-dark text-center py-5">
-                        Nuestro Productos
+                        Nuestros Productos
                     </h2>
                     <div
                         className="container"
