@@ -5,6 +5,7 @@ import ProductSlider from "../components/ProductSlider";
 import Header from "../components/Header";
 import BannerHome from "../components/BannerHome";
 import AbautMe from "../components/AbautMe";
+import Footer from "../components/Footer";
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <BannerHome />
             <ListFoods />
             <AbautMe />
+            <Footer />
         </div>
     );
 };
