@@ -1,11 +1,24 @@
-// import { useForm } from "react-hook-form";
-// import { useState } from "react";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        reset,
+    } = useForm();
+
+    const [enviandoEmail, setEnviandoEmail] = useState(false);
+    const envio = (data) => {
+        setEnviandoEmail(true);
+        reset();
+    };
+
     return (
         <>
-            <footer className="mt-auto" id="footer">
+            <footer className="mt-auto  text-bg-dark py-5 background-main" id="footer">
                 <div className="container d-flex justify-content-center">
                     <div className="row">
                         <div className="col-md-4 text-center text-md-start">
@@ -55,7 +68,7 @@ const Footer = () => {
                                 Suscríbete a nuestros boletines ahora y mantente al día
                                 con ofertas exclusivas.
                             </p>
-                            {/* <form onSubmit={handleSubmit(envio)}>
+                            <form onSubmit={handleSubmit(envio)}>
                                 <div>
                                     <input
                                         type="email"
@@ -79,9 +92,9 @@ const Footer = () => {
                                     </div>
                                 </div>
                                 <button className="w-100" type="submit">
-                                    {enviandoEmail ? "Enviando..." : "Enviar"}
+                                    {enviandoEmail ? "Enviado" : "Enviar"}
                                 </button>
-                            </form> */}
+                            </form>
                         </div>
                     </div>
                 </div>
