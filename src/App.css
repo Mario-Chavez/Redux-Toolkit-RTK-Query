@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap');
 
+/* header  transparent*/
+.main-header{
+  backdrop-filter:blur(5px);
+  position: sticky;
+  top: 0%;
+  animation: adjust-header linear both ;
+  animation-timeline: scroll();  
+}
+@keyframes adjust-header{to{
+  opacity: 0.9;
+  height: auto;
+}}
+
+
 .title{
   font-size: 4rem;
   font-family: 'Play', sans-serif;
