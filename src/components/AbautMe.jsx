@@ -15,7 +15,7 @@ const AbautMe = () => {
                 backgroundColor: "#212529",
             }}
         >
-            <Container className="pt-lg-5">
+            <Container className="pt-lg-5 pb-5">
                 <Row className="justify-content-center text-center">
                     <Col sm={12} lg={6} md={12} className="mt-2">
                         <div className="text-bg-dark">
