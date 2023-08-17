@@ -7,7 +7,7 @@ import LoadingCards from "./LoadingCards";
 const ListFoods = () => {
     const { data: food, isLoading, isError } = useGetFoodsQuery();
     const navigate = useNavigate();
-    console.log(food);
+    // console.log(food);
     const handleDetail = (id) => {
         navigate(`/detalles/${id}`);
     };
@@ -21,12 +21,13 @@ const ListFoods = () => {
                     style={{
                         backgroundColor: "#212529",
                     }}
+                    className="py-5"
                 >
                     <h2 className="title text-bg-dark text-center py-5">
                         Nuestros Productos
                     </h2>
                     <div
-                        className="container"
+                        className="container scroll-listProduct"
                         style={{
                             overflowY: "scroll",
                             maxHeight: "50rem",
