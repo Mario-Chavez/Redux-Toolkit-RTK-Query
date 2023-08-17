@@ -25,6 +25,7 @@ const Customers = () => {
             className="text-bg-dark p-4"
         >
             <Container className="text-center py-5">
+                <h2 className="title mb-5">Nuestros Clientes</h2>
                 <Row>
                     <Col
                         xs={12}
