@@ -2,7 +2,7 @@ import React from "react";
 import photo from "../assets/img-foto.jpg";
 import { useParams } from "react-router-dom";
 import { useGetOneFoodQuery } from "../api/apiSlice";
-import { Card, Col, Row } from "react-bootstrap";
+import { Card, Col, Container, Image } from "react-bootstrap";
 import { FallingLines } from "react-loader-spinner";
 
 const Detail = () => {
@@ -20,19 +20,16 @@ const Detail = () => {
                     ariaLabel="falling-lines-loading"
                 />
             ) : (
-                <Card className="mx-auto my-5">
-                    <Card.Body>
-                        <Row>
-                            <Col md={12}>
-                                <Card.Img src={food.imagen} />
-                            </Col>
-                            <Col md={5}>
-                                <Card.Title>{food.nombre}</Card.Title>
-                                <Card.Text>{food.categoria}</Card.Text>
-                            </Col>
-                        </Row>
-                    </Card.Body>
-                </Card>
+                <Container className="my-5">
+                    <div className="  my-5">
+                        <div className="w-50 mx-auto">
+                            <Image src={food.imagen} className="img-detail" />
+                        </div>
+
+                        <div>{food.nombre}</div>
+                        <div>{food.categoria}</div>
+                    </div>
+                </Container>
 
                 // <Card border="primary" style={{ width: "18rem" }}>
                 //     <Card.Header>{food.nombre}</Card.Header>

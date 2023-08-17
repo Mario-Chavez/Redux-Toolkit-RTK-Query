@@ -79,3 +79,11 @@
   max-width: 10rem;
   min-width: 8rem;
 }
+
+/* detail Product */
+
+.img-detail {
+  margin-top: 5rem;
+  width: 100%; 
+}
+
