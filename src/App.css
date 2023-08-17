@@ -60,3 +60,8 @@
   max-height: 30rem;
    border-radius: 25px;
 }
+/* clients image */
+.clients-img{
+  max-width: 10rem;
+  min-width: 8rem;
+}

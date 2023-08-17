@@ -29,28 +29,149 @@ const Customers = () => {
                     <Col
                         xs={12}
                         md={4}
-                        className="border border-2 border-top-0 border-bottom-0 my-5"
+                        className=" border border-1 border-top-0 border-bottom-0 my-5 border-primary"
                     >
-                        <span className="border border-2 border-end-0 border-start-0 py-5">
-                            <Image src="" />
+                        <span className=" py-5  w-auto">
+                            <Image src={pizza} className="clients-img" />
                         </span>
                     </Col>
                     <Col
                         xs={12}
                         md={4}
-                        className="border border-2 border-top-0 border-bottom-0 my-5"
+                        className=" border border-1 border-top-0 border-bottom-0 my-5 border-primary  "
                     >
-                        <span className="border border-2 border-end-0 border-start-0 py-5">
-                            xs=12 md=8
+                        <span className="d-flex align-items-center justify-content-center py-5  w-auto">
+                            <Image src={subways} className="clients-img" />
+                        </span>
+                    </Col>
+
+                    <Col
+                        xs={12}
+                        md={4}
+                        className="border border-1 border-top-0 border-bottom-0 my-5 border-primary"
+                    >
+                        <span className="  py-5 w-100">
+                            <Image src={mack} className="clients-img" />
+                        </span>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col
+                        xs={12}
+                        md={4}
+                        className=" border border-1 border-top-0 border-bottom-0 my-5 border-primary "
+                    >
+                        <span className=" d-flex align-items-center justify-content-center py-5  w-auto">
+                            <Image src={nodles} className="clients-img" />
                         </span>
                     </Col>
                     <Col
                         xs={12}
                         md={4}
-                        className="border border-2 border-top-0 border-bottom-0 my-5"
+                        className=" border border-1 border-top-0 border-bottom-0 my-5 border-primary  "
                     >
-                        <span className="border border-2 border-end-0 border-start-0 py-5">
-                            xs=12 md=8
+                        <span className=" py-5  w-auto">
+                            <Image src={burguer} className="clients-img" />
+                        </span>
+                    </Col>
+
+                    <Col
+                        xs={12}
+                        md={4}
+                        className="border border-1 border-top-0 border-bottom-0 my-5 border-primary"
+                    >
+                        <span className=" py-5 w-100">
+                            <Image src={arbyns} className="clients-img" />
+                        </span>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col
+                        xs={12}
+                        md={4}
+                        className=" border border-1 border-top-0 border-bottom-0 my-5 border-primary "
+                    >
+                        <span className="d-flex  align-items-center justify-content-center py-5  w-auto">
+                            <Image src={chikFel} className="clients-img" />
+                        </span>
+                    </Col>
+                    <Col
+                        xs={12}
+                        md={4}
+                        className=" border border-1 border-top-0 border-bottom-0 my-5 border-primary  "
+                    >
+                        <span className=" py-5  w-auto">
+                            <Image src={chipotle} className="clients-img" />
+                        </span>
+                    </Col>
+
+                    <Col
+                        xs={12}
+                        md={4}
+                        className="border border-1 border-top-0 border-bottom-0 border-primary my-5"
+                    >
+                        <span className=" py-5 w-100">
+                            <Image src={tacostime} className="clients-img" />
+                        </span>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col
+                        xs={12}
+                        md={4}
+                        className=" border border-1 border-top-0 border-bottom-0 my-5 border-primary "
+                    >
+                        <span className=" py-5  w-auto">
+                            <Image src={kfc} className="clients-img" />
+                        </span>
+                    </Col>
+                    <Col
+                        xs={12}
+                        md={4}
+                        className=" border border-1 border-top-0 border-bottom-0 my-5 border-primary  "
+                    >
+                        <span className=" py-5  w-auto">
+                            <Image src={domino} className="clients-img" />
+                        </span>
+                    </Col>
+
+                    <Col
+                        xs={12}
+                        md={4}
+                        className="border border-1 border-top-0 border-bottom-0 my-5 border-primary"
+                    >
+                        <span className="d-flex  align-items-center justify-content-center py-5 w-100">
+                            <Image src={wendy} className="clients-img" />
+                        </span>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col
+                        xs={12}
+                        md={4}
+                        className=" border border-1 border-top-0 border-bottom-0 my-5 border-primary "
+                    >
+                        <span className="  d-flex  align-items-center justify-content-center py-5  w-auto">
+                            <Image src={sbarro} className="clients-img" />
+                        </span>
+                    </Col>
+                    <Col
+                        xs={12}
+                        md={4}
+                        className=" border border-1 border-top-0 border-bottom-0 my-5 border-primary  "
+                    >
+                        <span className=" d-flex  align-items-center justify-content-center py-5  w-auto">
+                            <Image src={carls} className="clients-img" />
+                        </span>
+                    </Col>
+
+                    <Col
+                        xs={12}
+                        md={4}
+                        className="border border-1 border-top-0 border-bottom-0 my-5 border-primary"
+                    >
+                        <span className="d-flex  align-items-center justify-content-center py-5 w-100">
+                            <Image src={nandos} className="clients-img" />
                         </span>
                     </Col>
                 </Row>
