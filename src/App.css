@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap');
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 /* header  transparent*/
 .main-header{
   backdrop-filter:blur(5px);
@@ -84,10 +89,22 @@
 .container-detail{
   background: rgb(35,34,42);
 background: linear-gradient(0deg,rgba(18,18,22,1)  0%, rgb(71, 70, 83) 100%);
+/* min-height: 61vh;
+margin-top: 3rem; */
 }
 .img-detail {
   margin-top: 5rem;
   width: 100%; 
 }
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
 
 

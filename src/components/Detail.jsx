@@ -13,14 +13,18 @@ const Detail = () => {
     return (
         <>
             {isLoading ? (
-                <FallingLines
-                    color="#4fa94d"
-                    width="100"
-                    visible={true}
-                    ariaLabel="falling-lines-loading"
-                />
+                <div className="container-detail mt-5">
+                    <Container className="mt-5 d-flex justify-content-center align-items-center">
+                        <FallingLines
+                            color="#4fa94d"
+                            width="100"
+                            visible={true}
+                            ariaLabel="falling-lines-loading"
+                        />
+                    </Container>
+                </div>
             ) : (
-                <div className="container-detail ">
+                <div className="container-detail">
                     <Container className="mt-5 d-flex justify-content-center align-items-center">
                         <Card className="m-5" style={{}}>
                             <Row>
