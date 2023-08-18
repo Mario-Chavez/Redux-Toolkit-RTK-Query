@@ -9,18 +9,20 @@ const Detail = () => {
     const params = useParams();
 
     const { data: food, isLoading, isError } = useGetOneFoodQuery(params.id);
-
+    const isLoad = true;
     return (
         <>
-            {isLoading ? (
-                <div className="container-detail mt-5">
+            {isLoad ? (
+                <div className="container-detail ">
                     <Container className="mt-5 d-flex justify-content-center align-items-center">
-                        <FallingLines
-                            color="#4fa94d"
-                            width="100"
-                            visible={true}
-                            ariaLabel="falling-lines-loading"
-                        />
+                        <div className="my-5">
+                            <FallingLines
+                                color="#164475"
+                                width="100"
+                                visible={true}
+                                ariaLabel="falling-lines-loading"
+                            />
+                        </div>
                     </Container>
                 </div>
             ) : (
