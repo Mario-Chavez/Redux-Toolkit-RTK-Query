@@ -18,23 +18,34 @@ const Footer = () => {
 
     return (
         <>
-            <footer className="mt-auto  text-bg-dark py-5 background-main" id="footer">
-                <div className="container d-flex justify-content-center">
+            <footer
+                className="mt-auto  text-bg-dark py-5 border border-primary p-2"
+                id="footer"
+            >
+                <div className="container d-flex justify-content-center ">
                     <div className="row">
-                        <div className="col-md-4 text-center text-md-start">
+                        <div className="col-md-4 text-center text-md-start ">
                             <h3>INFORMACIÓN</h3>
                             <ul className="list-unstyled">
                                 <li className="py-2">
-                                    <Link to={"/"}>Acerca de nosotros</Link>
+                                    <Link to={"/"} className="text-decoration-none">
+                                        Acerca de nosotros
+                                    </Link>
                                 </li>
                                 <li className="py-2">
-                                    <Link to={"/"}>Información de entrega</Link>
+                                    <Link to={"/"} className="text-decoration-none">
+                                        Información de entrega
+                                    </Link>
                                 </li>
                                 <li className="py-2">
-                                    <Link to={"/"}>Políticas de privacidad</Link>
+                                    <Link to={"/"} className="text-decoration-none">
+                                        Políticas de privacidad
+                                    </Link>
                                 </li>
                                 <li className="py-2">
-                                    <Link to={"/"}>Términos y condiciones</Link>
+                                    <Link to={"/"} className="text-decoration-none">
+                                        Términos y condiciones
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -42,13 +53,19 @@ const Footer = () => {
                             <h3>MI CUENTA</h3>
                             <ul className="list-unstyled">
                                 <li className="py-2">
-                                    <Link to={"/"}>Historial de pedidos</Link>
+                                    <Link to={"/"} className="text-decoration-none">
+                                        Historial de pedidos
+                                    </Link>
                                 </li>
                                 <li className="py-2">
-                                    <Link to={"/"}>Boletín</Link>
+                                    <Link to={"/"} className="text-decoration-none">
+                                        Boletín
+                                    </Link>
                                 </li>
                                 <li className="py-2">
-                                    <Link to={"/"}>Reembolsos</Link>
+                                    <Link to={"/"} className="text-decoration-none">
+                                        Reembolsos
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -81,7 +98,14 @@ const Footer = () => {
                                         {errors.email?.message}
                                     </div>
                                 </div>
-                                <button className="w-100 text-bg-dark" type="submit">
+                                <button
+                                    className="w-100 btn btn-primary"
+                                    type="submit"
+                                    style={{
+                                        backgroundColor: "rgb(22, 68, 117)",
+                                        width: "12rem",
+                                    }}
+                                >
                                     {enviandoEmail ? "Enviado" : "Enviar"}
                                 </button>
                             </form>
