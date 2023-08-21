@@ -9,11 +9,10 @@ const Detail = () => {
     const params = useParams();
 
     const { data: food, isLoading, isError } = useGetOneFoodQuery(params.id);
-    const isLoad = true;
     return (
         <>
-            {isLoad ? (
-                <div className="container-detail " style={{ height: "+65vh" }}>
+            {isLoading ? (
+                <div className="container-detail " style={{ height: "65vh" }}>
                     <Container className="mt-5 d-flex justify-content-center align-items-center">
                         <div className="my-5">
                             <TailSpin
@@ -30,7 +29,7 @@ const Detail = () => {
                     </Container>
                 </div>
             ) : (
-                <div className="container-detail">
+                <div className="container-detail py-5" style={{ minHeight: "68vh" }}>
                     <Container className="mt-5 d-flex justify-content-center align-items-center">
                         <Card className="m-5" style={{}}>
                             <Row>

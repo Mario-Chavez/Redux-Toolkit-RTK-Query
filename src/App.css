@@ -89,8 +89,9 @@
 .container-detail{
   background: rgb(35,34,42);
 background: linear-gradient(0deg,rgba(18,18,22,1)  0%, rgb(71, 70, 83) 100%);
-/* min-height: 61vh;
-margin-top: 3rem; */
+ max-height:auto;
+ 
+
 }
 .img-detail {
   margin-top: 5rem;
