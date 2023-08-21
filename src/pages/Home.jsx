@@ -15,7 +15,6 @@ const Home = () => {
             <ListFoods />
             <AbautMe />
             <ClientsBanner />
-            {/* <ProductSlider /> */}
             <Customers />
         </div>
     );

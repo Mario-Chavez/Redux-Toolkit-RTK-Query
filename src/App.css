@@ -101,19 +101,7 @@ background: linear-gradient(0deg,rgba(18,18,22,1)  0%, rgb(71, 70, 83) 100%);
   margin-top: 5rem;
   width: 100%; 
 }
-.container-text-description-detail{
 
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: auto; 
-}
-.text-description-detail{
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
-  padding: 20px;
-  height: 100%; /* Ocupar el 100% de la altura del contenedor */
-  overflow: hidden; /* Ocultar el contenido que sobrepase */
-}
 
 .page {
   min-height: 100vh;

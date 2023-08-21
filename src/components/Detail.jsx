@@ -32,13 +32,16 @@ const Detail = () => {
                 <div className="container-detail py-5 " style={{ minHeight: "68vh" }}>
                     <Container className="mt-5 d-flex justify-content-center align-items-center">
                         <Card
-                            className="m-5  card-style-shadow text-bg-dark"
+                            className="m-3  card-style-shadow text-bg-dark"
                             style={{ backgroundColor: "rgba(18,18,22,1) " }}
                         >
                             <Row>
-                                <Col md={7}>
+                                <Col
+                                    md={7}
+                                    className="overflow-y-auto scroll-listProduct mb-4"
+                                >
                                     <Card.Body
-                                        className="text-center mx-auto my-4"
+                                        className="text-center mx-auto mb-5"
                                         style={{ width: "100%" }}
                                     >
                                         <Card.Title className="fs-1 fw-bold">
@@ -47,10 +50,13 @@ const Detail = () => {
                                         <Card.Subtitle className="my-3 mb-5 text-primary fw-bold">
                                             {food.categoria}
                                         </Card.Subtitle>
-                                        <Card.Text className="container-text-description-detail">
-                                            <div className="text-description-detail">
-                                                {food.descripcion}
-                                            </div>
+                                        <Card.Text
+                                            className=""
+                                            style={{
+                                                maxHeight: "auto",
+                                            }}
+                                        >
+                                            {food.descripcion}
                                         </Card.Text>
                                     </Card.Body>
                                 </Col>
