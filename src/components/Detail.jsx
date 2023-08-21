@@ -1,14 +1,25 @@
-import React from "react";
-import photo from "../assets/img-foto.jpg";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { useGetOneFoodQuery } from "../api/apiSlice";
+import { useGetFoodsQuery, useGetOneFoodQuery } from "../api/apiSlice";
 import { Card, Col, Container, Image, Row } from "react-bootstrap";
 import { TailSpin } from "react-loader-spinner";
+import ProductSlider from "./ProductSlider";
 
 const Detail = () => {
     const params = useParams();
-
+    const { data, isLoadingFull } = useGetFoodsQuery();
     const { data: food, isLoading, isError } = useGetOneFoodQuery(params.id);
+    const [product, setProduct] = useState([]);
+
+    if (!isLoadingFull) {
+        console.log(data[0].categoria);
+        // const objetosFiltrados = data.filter(
+        //     (product) => product.categoria === food.categoria
+        // );
+        // //  data.find((product)=>product._id == )
+        // console.log(objetosFiltrados);
+    }
+
     return (
         <>
             {isLoading ? (
@@ -70,6 +81,7 @@ const Detail = () => {
                             </Row>
                         </Card>
                     </Container>
+                    {isLoadingFull ? <h1>loading</h1> : <ProductSlider />}
                 </div>
             )}
         </>
