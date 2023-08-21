@@ -29,40 +29,40 @@ const Detail = () => {
                     </Container>
                 </div>
             ) : (
-                <div className="container-detail py-5" style={{ minHeight: "68vh" }}>
+                <div className="container-detail py-5 " style={{ minHeight: "68vh" }}>
                     <Container className="mt-5 d-flex justify-content-center align-items-center">
-                        <Card className="m-5" style={{}}>
+                        <Card
+                            className="m-5  card-style-shadow text-bg-dark"
+                            style={{ backgroundColor: "rgba(18,18,22,1) " }}
+                        >
                             <Row>
-                                <Col md={8}>
-                                    {" "}
-                                    {/* Columna izquierda */}
-                                    <Card.Body>
-                                        <Card.Title>{food.nombre}</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on the card
-                                            title and make up the bulk of the card's
-                                            content.
+                                <Col md={7}>
+                                    <Card.Body
+                                        className="text-center mx-auto my-4"
+                                        style={{ width: "100%" }}
+                                    >
+                                        <Card.Title className="fs-1 fw-bold">
+                                            {food.nombre}
+                                        </Card.Title>
+                                        <Card.Subtitle className="my-3 mb-5 text-primary fw-bold">
+                                            {food.categoria}
+                                        </Card.Subtitle>
+                                        <Card.Text className="container-text-description-detail">
+                                            <div className="text-description-detail">
+                                                {food.descripcion}
+                                            </div>
                                         </Card.Text>
                                     </Card.Body>
                                 </Col>
-                                <Col
-                                    md={4}
-                                    className="d-flex justify-content-center align-items-center"
-                                >
-                                    {" "}
-                                    {/* Columna derecha */}
-                                    <Card.Img variant="top" src={food.imagen} />
+                                <Col md={5} className="d-flex justify-content-center ">
+                                    <Card.Img
+                                        variant="top"
+                                        src={food.imagen}
+                                        style={{ width: "100%", objectFit: "cover" }}
+                                    />
                                 </Col>
                             </Row>
                         </Card>
-                        {/* <div className="  my-5">
-                        <div className="w-50 mx-auto">
-                            <Image src={food.imagen} className="img-detail" />
-                        </div>
-
-                        <div>{food.nombre}</div>
-                        <div>{food.categoria}</div>
-                    </div> */}
                     </Container>
                 </div>
             )}
