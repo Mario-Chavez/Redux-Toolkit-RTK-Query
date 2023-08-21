@@ -3,7 +3,7 @@ import photo from "../assets/img-foto.jpg";
 import { useParams } from "react-router-dom";
 import { useGetOneFoodQuery } from "../api/apiSlice";
 import { Card, Col, Container, Image, Row } from "react-bootstrap";
-import { FallingLines } from "react-loader-spinner";
+import { TailSpin } from "react-loader-spinner";
 
 const Detail = () => {
     const params = useParams();
@@ -13,14 +13,18 @@ const Detail = () => {
     return (
         <>
             {isLoad ? (
-                <div className="container-detail ">
+                <div className="container-detail " style={{ height: "+65vh" }}>
                     <Container className="mt-5 d-flex justify-content-center align-items-center">
                         <div className="my-5">
-                            <FallingLines
-                                color="#164475"
-                                width="100"
+                            <TailSpin
+                                height="80"
+                                width="80"
+                                color="#ffff"
+                                ariaLabel="tail-spin-loading"
+                                radius="1"
+                                wrapperStyle={{ margin: "100px" }}
+                                wrapperClass=""
                                 visible={true}
-                                ariaLabel="falling-lines-loading"
                             />
                         </div>
                     </Container>

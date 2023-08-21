@@ -79,7 +79,11 @@ const Footer = () => {
                                 <div>
                                     <input
                                         type="email"
-                                        className="form-control w-100"
+                                        className={
+                                            enviandoEmail
+                                                ? "d-none"
+                                                : "form-control w-100"
+                                        }
                                         placeholder="Ingrese el correo electrónico"
                                         id="user_email"
                                         required
