@@ -1,24 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Carousel, Card, Row, Col, Container } from "react-bootstrap";
-import { useGetFoodsQuery } from "../api/apiSlice";
+import { foodApi } from "../api/apiSlice";
+import { useSelector } from "react-redux";
 
-const ProductSlider = ({ product }) => {
-    // console.log(product);
+const ProductSlider = ({ category }) => {
     const chunkSize = 3;
     const productGroups = [];
+    const { data } = useSelector(foodApi.endpoints.getFoods.select());
 
-    if (product) {
-        for (let i = 0; i < product[0].length; i += chunkSize) {
-            productGroups.push(product[0].slice(i, i + chunkSize));
+    //seguir aqui para filtrar
+    // const objectFilter = data.filter(
+    //     (product) => product.categoria == food.categoria
+    // );
+    useEffect(() => {
+        if (data) {
+            for (let i = 0; i < data.length; i += chunkSize) {
+                productGroups.push(data.slice(i, i + chunkSize));
+            }
         }
-    }
+        console.log(typeof productGroups);
+    }, []);
+
     return (
         <>
             <Container>
                 {productGroups.length < 0 ? (
                     <h1 className="text-dark">cargando</h1>
                 ) : (
-                    <Carousel className="my-5">
+                    <Carousel className="my-5 ">
                         {productGroups.map((group, index) => (
                             <Carousel.Item key={index}>
                                 <Row>
