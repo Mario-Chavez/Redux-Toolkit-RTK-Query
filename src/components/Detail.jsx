@@ -1,24 +1,27 @@
-import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useGetFoodsQuery, useGetOneFoodQuery } from "../api/apiSlice";
 import { Card, Col, Container, Image, Row } from "react-bootstrap";
 import { TailSpin } from "react-loader-spinner";
 import ProductSlider from "./ProductSlider";
+import { useEffect, useState } from "react";
 
 const Detail = () => {
     const params = useParams();
     const { data, isLoadingFull } = useGetFoodsQuery();
     const { data: food, isLoading, isError } = useGetOneFoodQuery(params.id);
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState();
 
-    if (!isLoadingFull) {
-        console.log(data[0].categoria);
-        // const objetosFiltrados = data.filter(
-        //     (product) => product.categoria === food.categoria
-        // );
-        // //  data.find((product)=>product._id == )
-        // console.log(objetosFiltrados);
-    }
+    useEffect(() => {
+        if (data && food) {
+            let productArray = [];
+            //filter
+            const objectFilter = data.filter(
+                (product) => product.categoria == food.categoria
+            );
+            productArray.push(objectFilter);
+            setProduct(productArray);
+        }
+    }, [data]);
 
     return (
         <>
@@ -81,7 +84,11 @@ const Detail = () => {
                             </Row>
                         </Card>
                     </Container>
-                    {isLoadingFull ? <h1>loading</h1> : <ProductSlider />}
+                    {isLoadingFull && !product ? (
+                        <h1>loading</h1>
+                    ) : (
+                        <ProductSlider product={product} />
+                    )}
                 </div>
             )}
         </>

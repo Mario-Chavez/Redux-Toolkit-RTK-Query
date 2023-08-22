@@ -2,44 +2,44 @@ import React from "react";
 import { Carousel, Card, Row, Col, Container } from "react-bootstrap";
 import { useGetFoodsQuery } from "../api/apiSlice";
 
-const ProductSlider = () => {
-    const { data: products, isLoading, isError } = useGetFoodsQuery();
+const ProductSlider = ({ product }) => {
+    // console.log(product);
     const chunkSize = 3;
     const productGroups = [];
 
-    if (products) {
-        for (let i = 0; i < products.length; i += chunkSize) {
-            productGroups.push(products.slice(i, i + chunkSize));
+    if (product) {
+        for (let i = 0; i < product[0].length; i += chunkSize) {
+            productGroups.push(product[0].slice(i, i + chunkSize));
         }
     }
     return (
         <>
             <Container>
-                {isLoading ? (
-                    <h1>cargando</h1>
+                {productGroups.length < 0 ? (
+                    <h1 className="text-dark">cargando</h1>
                 ) : (
                     <Carousel className="my-5">
                         {productGroups.map((group, index) => (
                             <Carousel.Item key={index}>
                                 <Row>
-                                    {group.map((product, innerIndex) => (
+                                    {group.map((newProduct, innerIndex) => (
                                         <Col key={innerIndex}>
                                             <Card className="card-body bg-black">
                                                 <Card.Body className="text-bg-dark mt">
                                                     <Card.Img
                                                         className="img-tarjeta-producto"
                                                         variant="top"
-                                                        src={product.imagen}
+                                                        src={newProduct.imagen}
                                                     />
                                                     <div className="card-body-text">
                                                         <Card.Title>
-                                                            {product.nombre}
+                                                            {newProduct.nombre}
                                                         </Card.Title>
                                                         <Card.Text>
-                                                            {product.categoria}
+                                                            {newProduct.categoria}
                                                         </Card.Text>
                                                         <Card.Text>
-                                                            ${product.precio}
+                                                            ${newProduct.precio}
                                                         </Card.Text>
                                                     </div>
                                                 </Card.Body>
