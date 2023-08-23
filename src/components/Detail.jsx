@@ -69,8 +69,12 @@ const Detail = () => {
                             </Row>
                         </Card>
                     </Container>
-
-                    <ProductSlider category={food.categoria} />
+                    <div>
+                        <h2 className=" text-center text-white my-5 ">
+                            Otros productos de la misma categoria
+                        </h2>
+                        <ProductSlider category={food.categoria} />
+                    </div>
                 </div>
             )}
         </>
