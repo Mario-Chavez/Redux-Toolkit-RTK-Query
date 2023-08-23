@@ -28,7 +28,7 @@
 
 /* slider de product */
 .img-tarjeta-producto {
-  max-width: 15rem;
+  max-width: 20rem;
   height: 12rem;
   position: absolute;
   top: 0%;
@@ -43,8 +43,8 @@
 /* tarjetas */
 .card-body {
   height: 23rem;
-  max-width: 16rem;
-  border-radius: 1rem;
+  max-width: 20rem;
+  border-radius: 0rem;
 }
 .card-body-text{
   position: absolute;

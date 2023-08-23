@@ -49,17 +49,17 @@ const ProductSlider = ({ category }) => {
                                 <Row>
                                     {group.map((newProduct, innerIndex) => (
                                         <Col
-                                            className="d-flex justify-content-center"
+                                            className="d-flex justify-content-center "
                                             key={innerIndex}
                                         >
-                                            <Card className="card-body bg-black">
-                                                <Card.Body className="text-bg-dark mt">
+                                            <Card className="card-body background-main ">
+                                                <Card.Body className="text-white ">
                                                     <Card.Img
                                                         className="img-tarjeta-producto"
                                                         variant="top"
                                                         src={newProduct.imagen}
                                                     />
-                                                    <div className="card-body-text">
+                                                    <div className="card-body-text ">
                                                         <Card.Title>
                                                             {newProduct.nombre}
                                                         </Card.Title>
