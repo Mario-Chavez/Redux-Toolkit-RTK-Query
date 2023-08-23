@@ -63,18 +63,13 @@ const ListFoods = () => {
                                         </Card.Text>
                                     </Card.Body>
                                     <Card.Footer>
-                                        <div className="d-flex justify-content-between">
+                                        <div className="d-flex justify-content-center">
                                             <Button
+                                                className=""
                                                 variant="primary"
                                                 onClick={() => handleDetail(food._id)}
                                             >
-                                                Detail
-                                            </Button>
-                                            <Button
-                                                variant="danger"
-                                                // onClick={() => handleDelet(user.id)}
-                                            >
-                                                Delet
+                                                Detalles
                                             </Button>
                                         </div>
                                     </Card.Footer>
