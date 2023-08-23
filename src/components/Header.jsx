@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import WhatsAppBotton from "./WhatsAppBotton";
 
 const Header = () => {
     return (
@@ -8,6 +9,7 @@ const Header = () => {
                 <Navbar.Brand href="#">Food delivery</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
+                    <WhatsAppBotton />
                     <Nav
                         className="ms-auto my-2 my-lg-0"
                         style={{ maxHeight: "100px" }}
