@@ -35,9 +35,8 @@ const LoadingCards = () => {
                                 </Placeholder>
                             </Card.Body>
                             <Card.Footer>
-                                <div className="d-flex justify-content-between">
-                                    <Placeholder.Button variant="primary" xs={3} />
-                                    <Placeholder.Button variant="danger" xs={3} />
+                                <div className="d-flex justify-content-center">
+                                    <Placeholder.Button variant="primary" xs={4} />
                                 </div>
                             </Card.Footer>
                         </Card>

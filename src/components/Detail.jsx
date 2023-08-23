@@ -10,9 +10,11 @@ const Detail = () => {
 
     return (
         <>
+            {/* <h1 className="text-white">Caracteristicas de su comida</h1> */}
+
             {isLoading ? (
-                <div className="container-detail " style={{ height: "65vh" }}>
-                    <Container className="mt-5 d-flex justify-content-center align-items-center">
+                <div className="container-detail ">
+                    <Container className="mt-5 d-flex  justify-content-center align-items-center">
                         <div className="my-5">
                             <TailSpin
                                 height="80"
@@ -20,7 +22,7 @@ const Detail = () => {
                                 color="#ffff"
                                 ariaLabel="tail-spin-loading"
                                 radius="1"
-                                wrapperStyle={{ margin: "100px" }}
+                                wrapperStyle={{ margin: "250px" }}
                                 wrapperClass=""
                                 visible={true}
                             />
@@ -69,8 +71,12 @@ const Detail = () => {
                             </Row>
                         </Card>
                     </Container>
-
-                    <ProductSlider category={food.categoria} />
+                    <div>
+                        <h2 className=" text-center text-white my-5 ">
+                            Otros productos de la misma categoria
+                        </h2>
+                        <ProductSlider category={food.categoria} />
+                    </div>
                 </div>
             )}
         </>

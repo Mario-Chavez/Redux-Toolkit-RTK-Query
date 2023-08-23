@@ -28,7 +28,7 @@
 
 /* slider de product */
 .img-tarjeta-producto {
-  max-width: 15rem;
+  max-width: 20rem;
   height: 12rem;
   position: absolute;
   top: 0%;
@@ -43,8 +43,8 @@
 /* tarjetas */
 .card-body {
   height: 23rem;
-  max-width: 16rem;
-  border-radius: 1rem;
+  max-width: 20rem;
+  border-radius: 0rem;
 }
 .card-body-text{
   position: absolute;
@@ -107,6 +107,23 @@ background: linear-gradient(0deg,rgba(18,18,22,1)  0%, rgb(71, 70, 83) 100%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+/* button whatsApp */
+
+.boton-Whatsapp {
+  position: fixed;
+  bottom: 5rem;
+  right: 0rem; 
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease
+}
+
+.boton-Whatsapp:hover {
+  color: #0056b3;
+  transform: translateX(-20px) rotate(5deg)
 }
 
 
