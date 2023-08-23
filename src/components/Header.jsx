@@ -1,8 +1,16 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { BsFillBagFill } from "react-icons/bs";
+import { useDispatch, useSelector } from "react-redux";
+import { setUser, clearUser } from "../api/userSlice";
 
 const Header = () => {
+    /* continiar aqui */
+    const user = useSelector((state) => state.user);
+    const dispatch = useDispatch();
+    console.log(user);
+
     return (
         <Navbar expand="lg" className="navbar navbar-dark bg-dark fixed-top main-header ">
             <Container fluid className=" text-bg-dark">
@@ -16,10 +24,13 @@ const Header = () => {
                         style={{ maxHeight: "100px" }}
                         navbarScroll
                     >
+                        <Nav.Link as={Link} to="/carrito">
+                            <BsFillBagFill size={18} />
+                        </Nav.Link>
                         <Nav.Link as={Link} to="/">
                             Home
                         </Nav.Link>
-                        <Nav.Link href="#abautMe">Link</Nav.Link>
+                        <Nav.Link href="#abautMe">Nosotros</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
