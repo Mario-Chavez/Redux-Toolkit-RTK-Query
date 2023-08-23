@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import BannerHome from "../components/BannerHome";
 import AbautMe from "../components/AbautMe";
 import ClientsBanner from "../components/ClientsBanner";
+import Customers from "../components/Customers";
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <ListFoods />
             <AbautMe />
             <ClientsBanner />
+            <Customers />
         </div>
     );
 };

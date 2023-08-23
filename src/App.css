@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap');
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Play', sans-serif;
+}
 /* header  transparent*/
 .main-header{
   backdrop-filter:blur(5px);
@@ -60,3 +66,51 @@
   max-height: 30rem;
    border-radius: 25px;
 }
+
+.scroll-listProduct::-webkit-scrollbar{
+  width: 15px;
+}
+.scroll-listProduct::-webkit-scrollbar-thumb{
+  background-color: #164475;
+  
+}
+.scroll-listProduct::-webkit-scrollbar-thumb:hover {
+  background-color: #fff;
+  
+}
+
+
+/* clients image */
+.clients-img{
+  max-width: 10rem;
+  min-width: 8rem;
+}
+
+/* detail Product */
+.container-detail{
+  background: rgb(35,34,42);
+background: linear-gradient(0deg,rgba(18,18,22,1)  0%, rgb(71, 70, 83) 100%);
+ max-height:auto;
+}
+.card-style-shadow{
+  -webkit-box-shadow: 3.5px 3px 11px 2.5px #dddddd;
+  -moz-box-shadow: 3.5px 3px 11px 2.5px #dddddd;
+  box-shadow: 3.5px 3px 11px 2.5px #dddddd;
+}
+.img-detail {
+  margin-top: 5rem;
+  width: 100%; 
+}
+
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+

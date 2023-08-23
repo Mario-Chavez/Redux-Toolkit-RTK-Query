@@ -1,50 +1,77 @@
-import React from "react";
-import photo from "../assets/img-foto.jpg";
 import { useParams } from "react-router-dom";
 import { useGetOneFoodQuery } from "../api/apiSlice";
-import { Card, Col, Row } from "react-bootstrap";
-import { FallingLines } from "react-loader-spinner";
+import { Card, Col, Container, Image, Row } from "react-bootstrap";
+import { TailSpin } from "react-loader-spinner";
+import ProductSlider from "./ProductSlider";
 
 const Detail = () => {
     const params = useParams();
-
     const { data: food, isLoading, isError } = useGetOneFoodQuery(params.id);
-    console.log(food);
+
     return (
         <>
             {isLoading ? (
-                <FallingLines
-                    color="#4fa94d"
-                    width="100"
-                    visible={true}
-                    ariaLabel="falling-lines-loading"
-                />
+                <div className="container-detail " style={{ height: "65vh" }}>
+                    <Container className="mt-5 d-flex justify-content-center align-items-center">
+                        <div className="my-5">
+                            <TailSpin
+                                height="80"
+                                width="80"
+                                color="#ffff"
+                                ariaLabel="tail-spin-loading"
+                                radius="1"
+                                wrapperStyle={{ margin: "100px" }}
+                                wrapperClass=""
+                                visible={true}
+                            />
+                        </div>
+                    </Container>
+                </div>
             ) : (
-                <Card className="mx-auto my-5">
-                    <Card.Body>
-                        <Row>
-                            <Col md={12}>
-                                <Card.Img src={food.imagen} />
-                            </Col>
-                            <Col md={5}>
-                                <Card.Title>{food.nombre}</Card.Title>
-                                <Card.Text>{food.categoria}</Card.Text>
-                            </Col>
-                        </Row>
-                    </Card.Body>
-                </Card>
+                <div className="container-detail py-5 " style={{ minHeight: "68vh" }}>
+                    <Container className="mt-5 d-flex justify-content-center align-items-center">
+                        <Card
+                            className="m-3  card-style-shadow text-bg-dark"
+                            style={{ backgroundColor: "rgba(18,18,22,1) " }}
+                        >
+                            <Row>
+                                <Col
+                                    md={7}
+                                    className="overflow-y-auto scroll-listProduct mb-4"
+                                >
+                                    <Card.Body
+                                        className="text-center mx-auto mb-5"
+                                        style={{ width: "100%" }}
+                                    >
+                                        <Card.Title className="fs-1 fw-bold">
+                                            {food.nombre}
+                                        </Card.Title>
+                                        <Card.Subtitle className="my-3 mb-5 text-primary fw-bold">
+                                            {food.categoria}
+                                        </Card.Subtitle>
+                                        <Card.Text
+                                            className=""
+                                            style={{
+                                                maxHeight: "auto",
+                                            }}
+                                        >
+                                            {food.descripcion}
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Col>
+                                <Col md={5} className="d-flex justify-content-center ">
+                                    <Card.Img
+                                        variant="top"
+                                        src={food.imagen}
+                                        style={{ width: "100%", objectFit: "cover" }}
+                                    />
+                                </Col>
+                            </Row>
+                        </Card>
+                    </Container>
 
-                // <Card border="primary" style={{ width: "18rem" }}>
-                //     <Card.Header>{food.nombre}</Card.Header>
-                //     <Card.Img variant="top" src={food.imagen} />
-                //     <Card.Body>
-                //         <Card.Title>{food.nombre}</Card.Title>
-                //         <Card.Text>
-                //             Some quick example text to build on the card title and make up
-                //             the bulk of the card's content.
-                //         </Card.Text>
-                //     </Card.Body>
-                // </Card>
+                    <ProductSlider category={food.categoria} />
+                </div>
             )}
         </>
     );
