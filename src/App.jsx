@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import DetailPage from "./pages/DetailPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import WhatsAppBotton from "./components/WhatsAppBotton";
 function App() {
     return (
         <BrowserRouter>
@@ -14,6 +15,7 @@ function App() {
                 <Route exact path="/detalles/:id" element={<DetailPage />}></Route>
                 {/*<Route exact path="/edit-list/:id" element={<Form />}></Route> */}
             </Routes>
+            <WhatsAppBotton />
             <Footer />
         </BrowserRouter>
     );

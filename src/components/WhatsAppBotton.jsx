@@ -3,9 +3,9 @@ import { IoLogoWhatsapp } from "react-icons/io";
 
 const WhatsAppBotton = () => {
     return (
-        <div>
+        <div className=" boton-Whatsapp">
             <a href="https://wa.me/+543815723588" target="_blank">
-                <IoLogoWhatsapp size={35} style={{ color: "#42C152" }} />
+                <IoLogoWhatsapp size={60} style={{ color: "#42C152" }} />
             </a>
         </div>
     );

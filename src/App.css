@@ -108,6 +108,23 @@ background: linear-gradient(0deg,rgba(18,18,22,1)  0%, rgb(71, 70, 83) 100%);
   display: flex;
   flex-direction: column;
 }
+/* button whatsApp */
+
+.boton-Whatsapp {
+  position: fixed;
+  bottom: 5rem;
+  right: 0rem; 
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease
+}
+
+.boton-Whatsapp:hover {
+  color: #0056b3;
+  transform: translateX(-20px) rotate(5deg)
+}
 
 
 
