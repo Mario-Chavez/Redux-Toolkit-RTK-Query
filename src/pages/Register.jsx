@@ -4,6 +4,7 @@ import { Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { setUser } from "../api/userSlice";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Register = () => {
     const dispatch = useDispatch();
@@ -17,10 +18,22 @@ const Register = () => {
         reset,
     } = useForm();
     const onSubmit = (data) => {
-        // console.log(data);
-        dispatch(setUser(data));
-        reset();
-        navigate("/");
+        Swal.fire({
+            title: "Quieres registrarte?",
+            showDenyButton: true,
+            confirmButtonText: "Registrarme",
+            confirmButtonColor: "#1261BA",
+            denyButtonText: `Cancelar`,
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                dispatch(setUser(data));
+                Swal.fire("Registrado!", "", "success");
+                reset();
+                navigate("/");
+            } else if (result.isDenied) {
+            }
+        });
     };
 
     return (
