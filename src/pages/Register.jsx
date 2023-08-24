@@ -17,8 +17,8 @@ const Register = () => {
     };
 
     return (
-        <div className="container-detail ">
-            <section className="container d-flex flex-column my-5 align-items-center justify-content-center text-white">
+        <div className="container-detail py-5 ">
+            <section className="container py-5 d-flex flex-column my-5 align-items-center justify-content-center text-white">
                 <h1>Soy el register</h1>
                 <Form onSubmit={handleSubmit(onSubmit)} className=" formCrearEditar">
                     <Form.Group className="my-3 ">
@@ -70,7 +70,7 @@ const Register = () => {
                         <label className="text-white mb-1">Contraseña</label>
                         <input
                             type="password"
-                            placeholder="Ej:RollingCode1"
+                            placeholder="Password123..."
                             className="form-control"
                             {...register("contrasenia", {
                                 required: "La contraseña es obligatoria",
@@ -85,7 +85,7 @@ const Register = () => {
                             {errors.contrasenia?.message}
                         </Form.Text>
                     </Form.Group>
-                    <div className=" d-flex justify-content-center">
+                    <div className=" d-flex justify-content-center mt-4">
                         <button
                             type="submit"
                             className="btn btn-primary"
