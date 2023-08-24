@@ -3,18 +3,23 @@ import { useGetOneFoodQuery } from "../api/apiSlice";
 import { Card, Col, Container, Image, Row } from "react-bootstrap";
 import { TailSpin } from "react-loader-spinner";
 import ProductSlider from "./ProductSlider";
+import { useEffect } from "react";
 
 const Detail = () => {
     const params = useParams();
     const { data: food, isLoading, isError } = useGetOneFoodQuery(params.id);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <>
-            {/* <h1 className="text-white">Caracteristicas de su comida</h1> */}
-
             {isLoading ? (
                 <div className="container-detail ">
-                    <Container className="mt-5 d-flex  justify-content-center align-items-center">
+                    <Container className="mt-5 d-flex flex-column  justify-content-center align-items-center">
+                        <h1 className="text-center text-white my-5">
+                            Caracteristicas de su comida
+                        </h1>
                         <div className="my-5">
                             <TailSpin
                                 height="80"
@@ -30,8 +35,9 @@ const Detail = () => {
                     </Container>
                 </div>
             ) : (
-                <div className="container-detail py-5 " style={{ minHeight: "68vh" }}>
-                    <Container className="mt-5 d-flex justify-content-center align-items-center">
+                <div className="container-detail py-5 ">
+                    <Container className="mt-5 d-flex flex-column justify-content-center align-items-center">
+                        <h1 className="text-center text-white mb-5">Caracteristicas</h1>
                         <Card
                             className="m-3  card-style-shadow text-bg-dark"
                             style={{ backgroundColor: "rgba(18,18,22,1) " }}
