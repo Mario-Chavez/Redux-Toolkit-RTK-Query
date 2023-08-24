@@ -17,6 +17,7 @@ const Register = () => {
         getValues,
         reset,
     } = useForm();
+
     const onSubmit = (data) => {
         Swal.fire({
             title: "Quieres registrarte?",
@@ -27,11 +28,10 @@ const Register = () => {
         }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-                dispatch(setUser(data));
+                dispatch(setUser({ ...data, orders: [] }));
                 Swal.fire("Registrado!", "", "success");
                 reset();
                 navigate("/");
-            } else if (result.isDenied) {
             }
         });
     };

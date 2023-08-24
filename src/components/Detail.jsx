@@ -8,6 +8,7 @@ import { useEffect } from "react";
 const Detail = () => {
     const params = useParams();
     const { data: food, isLoading, isError } = useGetOneFoodQuery(params.id);
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
