@@ -8,7 +8,7 @@ import { setUser, clearUser } from "../api/userSlice";
 
 const Header = () => {
     /* continiar aqui */
-    const user = useSelector((state) => state.user);
+    const user = useSelector((state) => state.user.user);
     const dispatch = useDispatch();
     console.log(user);
 
@@ -25,7 +25,7 @@ const Header = () => {
                         style={{ maxHeight: "100px" }}
                         navbarScroll
                     >
-                        {user.email ? (
+                        {user ? (
                             <Nav.Link as={Link} to="/carrito">
                                 <BsFillBagFill size={18} />
                             </Nav.Link>

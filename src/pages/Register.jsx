@@ -1,8 +1,13 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Form } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { setUser } from "../api/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const {
         register,
         handleSubmit,
@@ -11,9 +16,11 @@ const Register = () => {
         getValues,
         reset,
     } = useForm();
-
     const onSubmit = (data) => {
-        console.log(data);
+        // console.log(data);
+        dispatch(setUser(data));
+        reset();
+        navigate("/");
     };
 
     return (
