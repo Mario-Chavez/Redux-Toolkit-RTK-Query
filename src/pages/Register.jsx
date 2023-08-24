@@ -11,17 +11,22 @@ const Register = () => {
         getValues,
         reset,
     } = useForm();
+
+    const onSubmit = (data) => {
+        console.log(data);
+    };
+
     return (
-        <div className="container-detail p-5">
-            <section className="container  d-flex flex-column  my-5  align-items-center justify-content-center text-white">
+        <div className="container-detail ">
+            <section className="container d-flex flex-column my-5 align-items-center justify-content-center text-white">
                 <h1>Soy el register</h1>
-                <Form className="formCrearEditar">
-                    <Form.Group className="my-3">
-                        <label className="text-white text-start mb-1">Nombre</label>
+                <Form onSubmit={handleSubmit(onSubmit)} className=" formCrearEditar">
+                    <Form.Group className="my-3 ">
+                        <label className="text-white mb-1">Nombre</label>
                         <input
                             type="text"
                             placeholder="Nombre de Usuario"
-                            className="input_CrearEditarpd"
+                            className="form-control"
                             {...register("nombre", {
                                 required: "El nombre de usuario es obligatorio",
                                 minLength: {
@@ -46,7 +51,7 @@ const Register = () => {
                         <input
                             type="text"
                             placeholder="E-mail"
-                            className="input_CrearEditarpd"
+                            className="form-control"
                             {...register("email", {
                                 required: "El email es obligatorio",
                                 pattern: {
@@ -62,26 +67,11 @@ const Register = () => {
                     </Form.Group>
 
                     <Form.Group className="mb-3">
-                        <label className="text-white mb-1">Imagen</label>
-                        <input
-                            type="text"
-                            placeholder="Imagen de Usuario"
-                            className="input_CrearEditarpd"
-                            {...register("imagen", {
-                                required: "La imagen es obligatoria",
-                            })}
-                        />
-                        <Form.Text className="text-danger fw-bold">
-                            {errors.imagen?.message}
-                        </Form.Text>
-                    </Form.Group>
-
-                    <Form.Group className="mb-3">
                         <label className="text-white mb-1">Contraseña</label>
                         <input
                             type="password"
                             placeholder="Ej:RollingCode1"
-                            className="input_CrearEditarpd"
+                            className="form-control"
                             {...register("contrasenia", {
                                 required: "La contraseña es obligatoria",
                                 pattern: {
@@ -95,10 +85,19 @@ const Register = () => {
                             {errors.contrasenia?.message}
                         </Form.Text>
                     </Form.Group>
-                    <button type="submit" className="boton_iniciar">
-                        {" "}
-                        Iniciar{" "}
-                    </button>
+                    <div className=" d-flex justify-content-center">
+                        <button
+                            type="submit"
+                            className="btn btn-primary"
+                            style={{
+                                backgroundColor: "rgb(22, 68, 117)",
+                                width: "10rem",
+                            }}
+                        >
+                            {" "}
+                            Iniciar{" "}
+                        </button>
+                    </div>
                 </Form>
             </section>
         </div>

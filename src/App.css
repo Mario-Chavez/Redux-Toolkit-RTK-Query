@@ -129,7 +129,7 @@ background: linear-gradient(0deg,rgba(18,18,22,1)  0%, rgb(71, 70, 83) 100%);
 /* register  */
 
 .formCrearEditar {
-  width: 13rem;
+  width: 50%;
   margin: 0 auto;
 }
 
