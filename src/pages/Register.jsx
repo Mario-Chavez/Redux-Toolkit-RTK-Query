@@ -26,7 +26,7 @@ const Register = () => {
     return (
         <div className="container-detail py-5 ">
             <section className="container py-5 d-flex flex-column my-5 align-items-center justify-content-center text-white">
-                <h1>Soy el register</h1>
+                <h1 className="mb-5">Registrate para hacer tu pedido </h1>
                 <Form onSubmit={handleSubmit(onSubmit)} className=" formCrearEditar">
                     <Form.Group className="my-3 ">
                         <label className="text-white mb-1">Nombre</label>
