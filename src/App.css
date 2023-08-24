@@ -126,8 +126,12 @@ background: linear-gradient(0deg,rgba(18,18,22,1)  0%, rgb(71, 70, 83) 100%);
   transform: translateX(-20px) rotate(5deg)
 }
 
+/* register  */
 
-
+.formCrearEditar {
+  width: 13rem;
+  margin: 0 auto;
+}
 
 
 
