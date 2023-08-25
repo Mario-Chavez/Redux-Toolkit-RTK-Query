@@ -132,6 +132,48 @@ background: linear-gradient(0deg,rgba(18,18,22,1)  0%, rgb(71, 70, 83) 100%);
   width: 60%;
   margin: 0 auto;
 }
+/* 404 */
+.error-container {
+  margin-top: auto;
+  text-align: center;
+  animation: fadein 1s ease-in-out, fadedown 1s 1s ease-in-out;
+}
+
+.error-code {
+  font-size: 8rem;
+  color: #e74c3c;
+  margin: 0;
+}
+
+.error-message {
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 10px;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+
+  }
+}
+
+@keyframes fadedown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-300px);
+  }
+}
 
 
 
