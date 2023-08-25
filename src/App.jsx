@@ -9,6 +9,7 @@ import WhatsAppBotton from "./components/WhatsAppBotton";
 import Register from "./pages/Register";
 import RoutesProtect from "./routes/RoutesProtect";
 import RoutesAdmin from "./routes/RoutesAdmin";
+import Error404 from "./pages/Error404";
 
 function App() {
     return (
@@ -26,6 +27,7 @@ function App() {
                         </RoutesProtect>
                     }
                 ></Route>
+                <Route path="*" element={<Error404 />} />
             </Routes>
             <WhatsAppBotton />
             <Footer />

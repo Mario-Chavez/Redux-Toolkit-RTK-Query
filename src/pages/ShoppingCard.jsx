@@ -1,7 +1,15 @@
 import React from "react";
 
 const ShoppingCard = () => {
-    return <div></div>;
+    return (
+        <div>
+            <h1>soy el carrito</h1>
+            <h1>soy el carrito</h1>
+            <h1>soy el carrito</h1>
+            <h1>soy el carrito</h1>
+            <h1>soy el carrito</h1>
+        </div>
+    );
 };
 
 export default ShoppingCard;

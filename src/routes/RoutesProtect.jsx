@@ -6,6 +6,7 @@ const RoutesProtect = ({ children }) => {
     const user = useSelector((state) => state.user.user);
 
     if (!user) {
+        console.log("no hay user");
         return <Error404 />;
     }
     return children;
