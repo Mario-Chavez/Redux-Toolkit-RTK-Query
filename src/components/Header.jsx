@@ -7,10 +7,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { setUser, clearUser } from "../api/userSlice";
 
 const Header = () => {
-    /* continiar aqui */
+    // state global
     const user = useSelector((state) => state.user.user);
     const dispatch = useDispatch();
-    console.log(user);
+    // console.log(user);
 
     return (
         <Navbar expand="lg" className="navbar navbar-dark bg-dark fixed-top main-header ">
@@ -26,7 +26,7 @@ const Header = () => {
                         navbarScroll
                     >
                         {user ? (
-                            <Nav.Link as={Link} to="/carrito">
+                            <Nav.Link as={Link} to="/user/">
                                 <BsFillBagFill size={18} />
                             </Nav.Link>
                         ) : (
