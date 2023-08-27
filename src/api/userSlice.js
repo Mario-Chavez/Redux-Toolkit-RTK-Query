@@ -14,11 +14,15 @@ export const userSlice = createSlice({
         setUser: (state, action) => {
             state.user = action.payload;
         },
+        setUserOrder: (state, action) => {
+            console.log(action.payload);
+            // state.user.orders.push(action.payload);
+        },
         clearUser: (state) => {
             state.user = null;
         },
     },
 });
 
-export const { setUser, clearUser } = userSlice.actions;
+export const { setUser, clearUser, setUserOrder } = userSlice.actions;
 export const userSliceReducer = userSlice.reducer;
