@@ -3,7 +3,7 @@ import { useGetFoodsQuery } from "../api/apiSlice";
 import { useNavigate } from "react-router-dom";
 import { Button, Card } from "react-bootstrap";
 import LoadingCards from "./LoadingCards";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { MdAddShoppingCart } from "react-icons/md";
 
 const ListFoods = () => {
     const { data: food, isLoading, isError } = useGetFoodsQuery();
@@ -75,7 +75,7 @@ const ListFoods = () => {
                                         </div>
                                         <div className="">
                                             <Button className="swing" variant="">
-                                                <AiOutlineShoppingCart
+                                                <MdAddShoppingCart
                                                     size={35}
                                                     color="#164475"
                                                 />
