@@ -7,7 +7,7 @@ import LoadingCards from "./LoadingCards";
 const ListFoods = () => {
     const { data: food, isLoading, isError } = useGetFoodsQuery();
     const navigate = useNavigate();
-    // console.log(food);
+
     const handleDetail = (id) => {
         navigate(`/detalles/${id}`);
     };
@@ -62,8 +62,8 @@ const ListFoods = () => {
                                             </span>
                                         </Card.Text>
                                     </Card.Body>
-                                    <Card.Footer>
-                                        <div className="d-flex justify-content-center">
+                                    <Card.Footer className="">
+                                        <div className="d-flex justify-content-center ">
                                             <Button
                                                 className=""
                                                 variant="primary"

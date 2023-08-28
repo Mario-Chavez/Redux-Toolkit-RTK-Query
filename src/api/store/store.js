@@ -7,7 +7,6 @@ import { userSliceReducer } from "../userSlice";
 
 export const store = configureStore({
     reducer: {
-        // Add the generated reducer as a specific top-level slice
         [foodApi.reducerPath]: foodApi.reducer,
         user: userSliceReducer, // Agrega el slice de usuario al reducer
     },

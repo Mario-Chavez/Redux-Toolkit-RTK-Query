@@ -6,6 +6,11 @@ import DetailPage from "./pages/DetailPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import WhatsAppBotton from "./components/WhatsAppBotton";
+import Register from "./pages/Register";
+import RoutesProtect from "./routes/RoutesProtect";
+import RoutesAdmin from "./routes/RoutesAdmin";
+import Error404 from "./pages/Error404";
+
 function App() {
     return (
         <BrowserRouter>
@@ -13,7 +18,16 @@ function App() {
             <Routes>
                 <Route exact path="/" element={<Home />}></Route>
                 <Route exact path="/detalles/:id" element={<DetailPage />}></Route>
-                {/*<Route exact path="/edit-list/:id" element={<Form />}></Route> */}
+                <Route exact path="/register" element={<Register />}></Route>
+                <Route
+                    path="/user/*"
+                    element={
+                        <RoutesProtect>
+                            <RoutesAdmin></RoutesAdmin>
+                        </RoutesProtect>
+                    }
+                ></Route>
+                <Route path="*" element={<Error404 />} />
             </Routes>
             <WhatsAppBotton />
             <Footer />
