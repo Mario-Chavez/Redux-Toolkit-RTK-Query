@@ -15,8 +15,7 @@ export const userSlice = createSlice({
             state.user = action.payload;
         },
         setUserOrder: (state, action) => {
-            console.log(action.payload);
-            // state.user.orders.push(action.payload);
+            state.user.orders.push(action.payload);
         },
         clearUser: (state) => {
             state.user = null;

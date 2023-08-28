@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useGetOneFoodQuery } from "../api/apiSlice";
 import { Card, Col, Container, Image, Row, Button } from "react-bootstrap";
 import { TailSpin } from "react-loader-spinner";
@@ -7,21 +7,43 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserOrder } from "../api/userSlice";
 import { MdAddShoppingCart } from "react-icons/md";
+import Swal from "sweetalert2";
 
 const Detail = () => {
     const params = useParams();
     const { data: food, isLoading, isError } = useGetOneFoodQuery(params.id);
-    const userOrder = useSelector((state) => state.user.user);
+    const user = useSelector((state) => state.user.user);
+
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-    const handleAddShoop = (id) => {
-        if (id) {
-            // const { data } = useGetOneFoodQuery(id);
-            // console.log(data);
-        }
+
+    const handleAddShoop = () => {
+        const newProduct = {
+            nombre: food.nombre,
+            imagen: food.imagen,
+            precio: food.precio,
+        };
+        user
+            ? (console.log(user), dispatch(setUserOrder(newProduct)))
+            : Swal.fire({
+                  title: "Debes Registrarte para poder agregar a carrito?",
+                  showDenyButton: true,
+                  confirmButtonText: "Registrarme",
+                  confirmButtonColor: "#1261BA",
+                  denyButtonText: `Cancelar`,
+              }).then((result) => {
+                  /* Read more about isConfirmed, isDenied below */
+                  if (result.isConfirmed) {
+                      //   dispatch(setUser({ ...data, orders: [] }));
+                      //   Swal.fire("Registrado!", "", "success");
+                      //   reset();
+                      navigate("/register");
+                  }
+              });
     };
     return (
         <>
