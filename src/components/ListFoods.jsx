@@ -3,6 +3,7 @@ import { useGetFoodsQuery } from "../api/apiSlice";
 import { useNavigate } from "react-router-dom";
 import { Button, Card } from "react-bootstrap";
 import LoadingCards from "./LoadingCards";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const ListFoods = () => {
     const { data: food, isLoading, isError } = useGetFoodsQuery();
@@ -62,14 +63,22 @@ const ListFoods = () => {
                                             </span>
                                         </Card.Text>
                                     </Card.Body>
-                                    <Card.Footer>
-                                        <div className="d-flex justify-content-center">
+                                    <Card.Footer className="d-flex justify-content-between">
+                                        <div className="d-flex ">
                                             <Button
                                                 className=""
                                                 variant="primary"
                                                 onClick={() => handleDetail(food._id)}
                                             >
                                                 Detalles
+                                            </Button>
+                                        </div>
+                                        <div className="">
+                                            <Button className="swing" variant="">
+                                                <AiOutlineShoppingCart
+                                                    size={35}
+                                                    color="#164475"
+                                                />
                                             </Button>
                                         </div>
                                     </Card.Footer>

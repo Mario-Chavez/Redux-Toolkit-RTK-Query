@@ -37,9 +37,30 @@
   transform: translateX(-50%);
   object-fit: cover;
   border-radius: 10%;
-  
 
 }
+
+/* animacion para carrito */              
+.swing:hover{
+  animation-name: swing;
+      -webkit-animation-name: swing;
+      -moz-animation-name: swing;
+  animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      -moz-animation-duration: 1s;
+}
+
+  @keyframes swing {
+      20% {transform: rotate3d(0, 0, 1, 15deg);}
+      40% {transform: rotate3d(0, 0, 1, -10deg);}
+      60% {transform: rotate3d(0, 0, 1, 5deg);}
+      80% {transform: rotate3d(0, 0, 1, -5deg);}
+      to  {transform: rotate3d(0, 0, 1, 0deg);}
+  }
+            
+
+
+
 /* tarjetas */
 .card-body {
   height: 23rem;

@@ -8,7 +8,7 @@ import {
     AiOutlineYoutube,
 } from "react-icons/ai";
 
-const AbautMe = () => {
+const AboutMe = () => {
     return (
         <div
             style={{
@@ -61,4 +61,4 @@ const AbautMe = () => {
     );
 };
 
-export default AbautMe;
+export default AboutMe;
