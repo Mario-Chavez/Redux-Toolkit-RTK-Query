@@ -1,18 +1,28 @@
 import { useParams } from "react-router-dom";
 import { useGetOneFoodQuery } from "../api/apiSlice";
-import { Card, Col, Container, Image, Row } from "react-bootstrap";
+import { Card, Col, Container, Image, Row, Button } from "react-bootstrap";
 import { TailSpin } from "react-loader-spinner";
 import ProductSlider from "./ProductSlider";
 import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setUserOrder } from "../api/userSlice";
+import { MdAddShoppingCart } from "react-icons/md";
 
 const Detail = () => {
     const params = useParams();
     const { data: food, isLoading, isError } = useGetOneFoodQuery(params.id);
+    const userOrder = useSelector((state) => state.user.user);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-
+    const handleAddShoop = (id) => {
+        if (id) {
+            // const { data } = useGetOneFoodQuery(id);
+            // console.log(data);
+        }
+    };
     return (
         <>
             {isLoading ? (
@@ -39,20 +49,41 @@ const Detail = () => {
                 <div className="container-detail py-5 ">
                     <Container className="mt-5 d-flex flex-column justify-content-center align-items-center">
                         <h1 className="text-center text-white mb-5">Caracteristicas</h1>
+
                         <Card
-                            className="m-3  card-style-shadow text-bg-dark"
+                            className="m-3  card-style-shadow text-bg-dark position-relative"
                             style={{ backgroundColor: "rgba(18,18,22,1) " }}
                         >
+                            <div className="position-absolute top-0 end-0 m-1 ">
+                                <Button
+                                    className="swing"
+                                    style={{
+                                        backgroundColor: "black",
+                                        color: "inherit",
+                                        border: "none",
+                                        cursor: "pointer",
+                                        borderRadius: "50%",
+                                        width: "50px",
+                                        height: "50px",
+                                    }}
+                                >
+                                    <MdAddShoppingCart
+                                        size={"1.5rem"}
+                                        color="white"
+                                        onClick={() => handleAddShoop()}
+                                    />
+                                </Button>
+                            </div>
                             <Row>
                                 <Col
                                     md={7}
                                     className="overflow-y-auto scroll-listProduct mb-4"
                                 >
                                     <Card.Body
-                                        className="text-center mx-auto mb-5"
+                                        className="text-center mx-auto mb-5 "
                                         style={{ width: "100%" }}
                                     >
-                                        <Card.Title className="fs-1 fw-bold">
+                                        <Card.Title className="fs-1 fw-bold mt-5">
                                             {food.nombre}
                                         </Card.Title>
                                         <Card.Subtitle className="my-3 mb-5 text-primary fw-bold">

@@ -3,12 +3,11 @@ import { useGetFoodsQuery } from "../api/apiSlice";
 import { useNavigate } from "react-router-dom";
 import { Button, Card } from "react-bootstrap";
 import LoadingCards from "./LoadingCards";
-import { MdAddShoppingCart } from "react-icons/md";
 
 const ListFoods = () => {
     const { data: food, isLoading, isError } = useGetFoodsQuery();
     const navigate = useNavigate();
-    // console.log(food);
+
     const handleDetail = (id) => {
         navigate(`/detalles/${id}`);
     };
@@ -63,22 +62,14 @@ const ListFoods = () => {
                                             </span>
                                         </Card.Text>
                                     </Card.Body>
-                                    <Card.Footer className="d-flex justify-content-between">
-                                        <div className="d-flex ">
+                                    <Card.Footer className="">
+                                        <div className="d-flex justify-content-center ">
                                             <Button
                                                 className=""
                                                 variant="primary"
                                                 onClick={() => handleDetail(food._id)}
                                             >
                                                 Detalles
-                                            </Button>
-                                        </div>
-                                        <div className="">
-                                            <Button className="swing" variant="">
-                                                <MdAddShoppingCart
-                                                    size={35}
-                                                    color="#164475"
-                                                />
                                             </Button>
                                         </div>
                                     </Card.Footer>
