@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { BsFillBagFill } from "react-icons/bs";
@@ -10,7 +10,13 @@ const Header = () => {
     // state global
     const user = useSelector((state) => state.user.user);
     const dispatch = useDispatch();
-    // console.log(user);
+    console.log(user.orders);
+    const [badge, setBadge] = useState(0);
+
+    if (user.orders.length > 0) {
+        setBadge(user.orders.length);
+        console.log("le agregue elementos al badge");
+    }
 
     return (
         <Navbar expand="lg" className="navbar navbar-dark bg-dark fixed-top main-header ">
@@ -27,7 +33,21 @@ const Header = () => {
                     >
                         {user ? (
                             <Nav.Link as={Link} to="/user/">
-                                <BsFillBagFill size={18} />
+                                <button
+                                    className="position-relative"
+                                    style={{
+                                        backgroundColor: "transparent",
+                                        color: "inherit",
+                                        border: "none",
+                                        cursor: "pointer",
+                                        borderRadius: "50%",
+                                    }}
+                                >
+                                    <BsFillBagFill size={18} />
+                                    <span className="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                                        <span className="visually-hidden">{badge}</span>
+                                    </span>
+                                </button>
                             </Nav.Link>
                         ) : (
                             <Nav.Link as={Link} to="/register">

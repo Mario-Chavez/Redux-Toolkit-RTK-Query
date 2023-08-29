@@ -28,7 +28,7 @@ const Detail = () => {
             precio: food.precio,
         };
         user
-            ? (console.log(user), dispatch(setUserOrder(newProduct)))
+            ? dispatch(setUserOrder(newProduct))
             : Swal.fire({
                   title: "Debes Registrarte para poder agregar a carrito?",
                   showDenyButton: true,
