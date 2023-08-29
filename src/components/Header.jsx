@@ -3,21 +3,17 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { BsFillBagFill } from "react-icons/bs";
 import { BiSolidUser } from "react-icons/bi";
-import { useDispatch, useSelector } from "react-redux";
-import { setUser, clearUser } from "../api/userSlice";
+import { useSelector } from "react-redux";
 
 const Header = () => {
     // state global
     const user = useSelector((state) => state.user.user);
-    const dispatch = useDispatch();
-    console.log(user);
     const [badge, setBadge] = useState(0);
 
     useEffect(() => {
         if (user) {
             if (user.orders?.length > 0) {
                 setBadge(user.orders.length);
-                console.log("le agregue elementos al badge");
             }
         }
     }, [user]);
