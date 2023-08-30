@@ -5,10 +5,12 @@ import { setUserOrder } from "../api/userSlice";
 import { BiArrowBack } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { RiDeleteBinLine } from "react-icons/ri";
 
 const ShoppingCard = () => {
     const userOrder = useSelector((state) => state.user.user.orders);
     const [finalPrece, setfinalPrece] = useState(0);
+    const [image, setImage] = useState("");
     const dispatch = useDispatch();
 
     // console.log(userOrder);
@@ -24,6 +26,10 @@ const ShoppingCard = () => {
     useEffect(() => {
         sumaItem();
     }, []);
+
+    const handleImage = (image) => {
+        setImage(image);
+    };
 
     return (
         <div className="mt-5 container-detail text-white ">
@@ -43,8 +49,9 @@ const ShoppingCard = () => {
                                     <tr>
                                         <th>Nombre de Producto</th>
                                         <th>Imágenes</th>
+                                        <th>Precio x unidad</th>
                                         <th>Cantidad</th>
-                                        <th>Precio</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -59,13 +66,32 @@ const ShoppingCard = () => {
                                                         height: "5rem",
                                                         borderRadius: "50%",
                                                     }}
+                                                    onClick={() =>
+                                                        handleImage(product.imagen)
+                                                    }
                                                     src={product.imagen}
                                                     alt={product.nombre}
                                                 />
                                             </td>
                                             <td>{product.nombre}</td>
-                                            <td>$3</td>
                                             <td>$ {product.precio}</td>
+                                            <td> 1</td>
+                                            <td className="swing">
+                                                <Button
+                                                    className="swing"
+                                                    style={{
+                                                        backgroundColor: "transparent",
+                                                        color: "inherit",
+                                                        border: "none",
+                                                        cursor: "pointer",
+                                                        borderRadius: "50%",
+                                                        width: "50px",
+                                                        height: "50px",
+                                                    }}
+                                                >
+                                                    <RiDeleteBinLine size={20} />
+                                                </Button>
+                                            </td>
                                         </tr>
                                     ))}
                                 </tbody>
@@ -74,7 +100,10 @@ const ShoppingCard = () => {
                     </Col>
 
                     <Col>
-                        <Image src={userOrder[0].imagen} className="w-100" />
+                        <Image
+                            src={image ? image : userOrder[0].imagen}
+                            className="w-100"
+                        />
                     </Col>
                     <div className="d-flex justify-content-between my-5">
                         <Link to={"/"} className="text-decoration-none fs-5">
