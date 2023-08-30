@@ -38,9 +38,6 @@ const Detail = () => {
               }).then((result) => {
                   /* Read more about isConfirmed, isDenied below */
                   if (result.isConfirmed) {
-                      //   dispatch(setUser({ ...data, orders: [] }));
-                      //   Swal.fire("Registrado!", "", "success");
-                      //   reset();
                       navigate("/register");
                   }
               });
