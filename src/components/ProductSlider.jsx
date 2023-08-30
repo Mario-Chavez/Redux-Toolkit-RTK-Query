@@ -76,7 +76,7 @@ const ProductSlider = ({ category }) => {
                                                 </Card.Body>
                                                 <Link
                                                     to={`/detalles/${newProduct._id}`}
-                                                    className="d-flex justify-content-end"
+                                                    className="d-flex justify-content-center"
                                                 >
                                                     Ver mas
                                                 </Link>
