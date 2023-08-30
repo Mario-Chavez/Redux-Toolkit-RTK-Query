@@ -3,13 +3,12 @@ import { Carousel, Card, Row, Col, Container } from "react-bootstrap";
 import { foodApi } from "../api/apiSlice";
 import { useSelector } from "react-redux";
 import { TailSpin } from "react-loader-spinner";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ProductSlider = ({ category }) => {
     const chunkSize = 2;
     const { data, isLoading } = useSelector(foodApi.endpoints.getFoods.select());
     const [productGroups, setProductGroups] = useState([]);
-    const navigate = useNavigate();
 
     useEffect(() => {
         if (data) {
@@ -75,7 +74,10 @@ const ProductSlider = ({ category }) => {
                                                         </div>
                                                     </div>
                                                 </Card.Body>
-                                                <Link className="d-flex justify-content-end">
+                                                <Link
+                                                    to={`/detalles/${newProduct._id}`}
+                                                    className="d-flex justify-content-end"
+                                                >
                                                     Ver mas
                                                 </Link>
                                             </Card>
