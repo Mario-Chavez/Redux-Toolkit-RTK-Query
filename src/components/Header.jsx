@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { BsFillBagFill } from "react-icons/bs";
 import { BiSolidUser } from "react-icons/bi";
-import { useDispatch, useSelector } from "react-redux";
-import { setUser, clearUser } from "../api/userSlice";
+import { useSelector } from "react-redux";
 
 const Header = () => {
     // state global
     const user = useSelector((state) => state.user.user);
-    const dispatch = useDispatch();
-    // console.log(user);
+    const [badge, setBadge] = useState(0);
+
+    useEffect(() => {
+        if (user) {
+            if (user.orders?.length > 0) {
+                setBadge(user.orders.length);
+            }
+        }
+    }, [user]);
 
     return (
         <Navbar expand="lg" className="navbar navbar-dark bg-dark fixed-top main-header ">
@@ -26,9 +32,29 @@ const Header = () => {
                         navbarScroll
                     >
                         {user ? (
-                            <Nav.Link as={Link} to="/user/">
-                                <BsFillBagFill size={18} />
-                            </Nav.Link>
+                            user.orders.length > 0 ? (
+                                <Nav.Link as={Link} to="/user/">
+                                    <button
+                                        className="position-relative"
+                                        style={{
+                                            backgroundColor: "transparent",
+                                            color: "inherit",
+                                            border: "none",
+                                            cursor: "pointer",
+                                            borderRadius: "50%",
+                                        }}
+                                    >
+                                        <BsFillBagFill size={18} />
+                                        <span className="position-absolute top-0 start-100 translate-middle">
+                                            <span className=" text-danger">{badge}</span>
+                                        </span>
+                                    </button>
+                                </Nav.Link>
+                            ) : (
+                                <Nav.Link as={Link} to="/user/">
+                                    <BsFillBagFill size={18} />
+                                </Nav.Link>
+                            )
                         ) : (
                             <Nav.Link as={Link} to="/register">
                                 <BiSolidUser size={18} />

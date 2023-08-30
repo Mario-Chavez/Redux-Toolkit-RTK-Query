@@ -3,6 +3,7 @@ import { Carousel, Card, Row, Col, Container } from "react-bootstrap";
 import { foodApi } from "../api/apiSlice";
 import { useSelector } from "react-redux";
 import { TailSpin } from "react-loader-spinner";
+import { Link } from "react-router-dom";
 
 const ProductSlider = ({ category }) => {
     const chunkSize = 2;
@@ -43,7 +44,7 @@ const ProductSlider = ({ category }) => {
                         </div>
                     </Container>
                 ) : (
-                    <Carousel className="my-5">
+                    <Carousel className="my-5 py-5">
                         {productGroups.map((group, index) => (
                             <Carousel.Item key={index}>
                                 <Row>
@@ -52,7 +53,7 @@ const ProductSlider = ({ category }) => {
                                             className="d-flex justify-content-center "
                                             key={innerIndex}
                                         >
-                                            <Card className="card-body background-main ">
+                                            <Card className="card-body background-main transUp">
                                                 <Card.Body className="text-white ">
                                                     <Card.Img
                                                         className="img-tarjeta-producto"
@@ -66,11 +67,19 @@ const ProductSlider = ({ category }) => {
                                                         <Card.Text className="text-primary">
                                                             {newProduct.categoria}
                                                         </Card.Text>
-                                                        <Card.Text>
-                                                            ${newProduct.precio}
-                                                        </Card.Text>
+                                                        <div className="d-flex flex-column">
+                                                            <Card.Text>
+                                                                ${newProduct.precio}
+                                                            </Card.Text>
+                                                        </div>
                                                     </div>
                                                 </Card.Body>
+                                                <Link
+                                                    to={`/detalles/${newProduct._id}`}
+                                                    className="d-flex justify-content-center"
+                                                >
+                                                    Ver mas
+                                                </Link>
                                             </Card>
                                         </Col>
                                     ))}

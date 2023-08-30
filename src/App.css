@@ -99,6 +99,16 @@
   background-color: #fff;
   
 }
+.scroll-shoppingCard::-webkit-scrollbar{
+  width: 5px;
+}
+.scroll-shoppingCard::-webkit-scrollbar-thumb{
+  background-color: #164475;
+}
+.scroll-shoppingCard::-webkit-scrollbar-thumb:hover {
+  background-color: #fff;
+  
+}
 
 
 /* clients image */
@@ -199,5 +209,25 @@ background: linear-gradient(0deg,rgba(18,18,22,1)  0%, rgb(71, 70, 83) 100%);
   }
 }
 
+/* table shopping card */
+th, td {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 40px;
+}
+/* prduct slider  */
 
 
+              
+.transUp{
+  transition: .5s, color .10s;
+      -webkit-transition: .5s, color .10s;
+      -moz-transition: .5s, color .10s;
+}
+.transUp:hover{
+  transform: translatey(-20px);
+      -webkit-transform: translatey(-20px);
+      -moz-transform: translatey(-20px);
+}
+            
