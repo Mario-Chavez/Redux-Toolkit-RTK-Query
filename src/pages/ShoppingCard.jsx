@@ -107,10 +107,15 @@ const ShoppingCard = () => {
                             </div>
                         </Col>
 
-                        <Col>
+                        <Col
+                            style={{
+                                height: "31rem",
+                                overflowY: "hidden",
+                            }}
+                        >
                             <Image
                                 src={image ? image : userOrder[0].imagen}
-                                className="w-100"
+                                className="w-100 "
                             />
                         </Col>
                         <div className="d-flex justify-content-between my-5">
