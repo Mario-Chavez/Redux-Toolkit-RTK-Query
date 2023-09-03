@@ -1,10 +1,9 @@
-import React, { useState } from "react";
 import { Col, Container, Row, Image, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { deletOneOrder, setUserOrder } from "../api/userSlice";
 import { BiArrowBack } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { RiDeleteBinLine } from "react-icons/ri";
 
 const ShoppingCard = () => {
@@ -12,6 +11,26 @@ const ShoppingCard = () => {
     const [finalPrece, setfinalPrece] = useState(0);
     const [image, setImage] = useState("");
     const dispatch = useDispatch();
+    /* 
+       const user = useSelector((state) => state.user.user);
+    const dispatch = useDispatch();
+    const [buy, setBuy] = useState([]);
+    const [url, setUrl] = useState(null);
+
+    useEffect(() => {
+        if (user) {
+            if (user.orders?.length > 0) {
+                const newProduct = user.orders;
+                setBuy([...buy, ...newProduct]);
+                console.log(buy);
+                const mensaje = encodeURIComponent(`¡Hola! Mi pedido es: ${buy}`);
+                setUrl(`https://wa.me/+543815723588?text=${mensaje}`);
+            }
+        }
+    }, [user]);
+
+    
+    */
 
     const sumaItem = () => {
         let precio = 0;
