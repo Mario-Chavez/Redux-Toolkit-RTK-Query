@@ -10,7 +10,7 @@ const BannerHome = () => {
                     <Image className="plate-food" src={plato} />
                 </Col>
                 <Col sm={12} lg={6} md={12}>
-                    <h1 className="text-light title mb-5 mt-2">Looking for food</h1>
+                    <h1 className="text-light title mb-5 mt-2">Food</h1>
                     <p className="text-light">
                         "Descubre una experiencia culinaria única con nuestra innovadora
                         aplicación de comidas. Explora una amplia variedad de deliciosas

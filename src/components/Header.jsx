@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, Container, Image } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { BsFillBagFill } from "react-icons/bs";
 import { BiSolidUser, BiSolidUserMinus } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import { clearUser } from "../api/userSlice";
 import Swal from "sweetalert2";
+import logo from "../assets/logo-new.png";
 
 const Header = () => {
     // state global
@@ -39,7 +40,7 @@ const Header = () => {
         <Navbar expand="lg" className="navbar navbar-dark bg-dark fixed-top main-header ">
             <Container fluid className=" text-bg-dark">
                 <Navbar.Brand as={Link} to="/">
-                    Food delivery
+                    <Image src={logo} style={{ width: "3rem" }} />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
