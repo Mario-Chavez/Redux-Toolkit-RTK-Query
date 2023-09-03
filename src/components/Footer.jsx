@@ -119,7 +119,15 @@ const Footer = () => {
                 </div>
                 <div className="text-center mt-5 d-flex flex-column justify-content-center align-items-center">
                     <Image src={logo} style={{ width: "6rem" }} />
-                    <span>&copy; todos los derechos reservados a DevFood</span>{" "}
+                    <span>
+                        &copy; todos los derechos reservados a{" "}
+                        <a
+                            href="https://www.linkedin.com/in/mario-chavez-desarrollador-fullstack/"
+                            target="_blank"
+                        >
+                            DevFood
+                        </a>{" "}
+                    </span>{" "}
                 </div>
             </footer>
         </>
