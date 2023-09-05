@@ -1,8 +1,25 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
+import { clearUser } from "../api/userSlice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const ModalBuy = (props) => {
-    console.log(props.finalPrece);
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const handlerBuy = () => {
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Gracias por su compra",
+            showConfirmButton: false,
+            timer: 1500,
+        });
+        dispatch(clearUser());
+        navigate("/");
+    };
     return (
         <Modal
             show={props.show}
@@ -41,7 +58,6 @@ const ModalBuy = (props) => {
                                                 height: "5rem",
                                                 borderRadius: "50%",
                                             }}
-                                            onClick={() => handleImage(product.imagen)}
                                             src={product.imagen}
                                             alt={product.nombre}
                                         />
@@ -59,7 +75,7 @@ const ModalBuy = (props) => {
                 </Modal.Body>
                 <Modal.Footer>
                     <div className="d-flex justify-content-between">
-                        <Button variant="success" onClick={props.onHide}>
+                        <Button variant="success" onClick={handlerBuy}>
                             Comprar
                         </Button>
                     </div>
