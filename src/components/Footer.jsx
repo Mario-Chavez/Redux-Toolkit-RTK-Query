@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-
+import logo from "../assets/logo-new.png";
+import { Image } from "react-bootstrap";
 const Footer = () => {
     const {
         register,
@@ -115,6 +116,18 @@ const Footer = () => {
                             </form>
                         </div>
                     </div>
+                </div>
+                <div className="text-center mt-5 d-flex flex-column justify-content-center align-items-center">
+                    <Image src={logo} style={{ width: "6rem" }} />
+                    <span>
+                        &copy; todos los derechos desarrollo reservados a{" "}
+                        <a
+                            href="https://www.linkedin.com/in/mario-chavez-desarrollador-fullstack/"
+                            target="_blank"
+                        >
+                            Mario Chavez
+                        </a>{" "}
+                    </span>{" "}
                 </div>
             </footer>
         </>
