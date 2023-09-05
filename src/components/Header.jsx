@@ -3,6 +3,7 @@ import { Navbar, Nav, Container, Image } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { BsFillBagFill } from "react-icons/bs";
 import { BiSolidUser, BiSolidUserMinus } from "react-icons/bi";
+import { RiLogoutCircleRLine } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
 import { clearUser } from "../api/userSlice";
 import Swal from "sweetalert2";
@@ -77,7 +78,7 @@ const Header = () => {
                                     </Nav.Link>
                                 )}
                                 <Nav.Link onClick={handleUserOut}>
-                                    <BiSolidUserMinus size={22} />
+                                    <RiLogoutCircleRLine size={22} />
                                 </Nav.Link>
                             </>
                         ) : (
