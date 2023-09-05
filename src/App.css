@@ -230,4 +230,12 @@ th, td {
       -webkit-transform: translatey(-20px);
       -moz-transform: translatey(-20px);
 }
+
+/* Modal Buy */
+.modal-buy{
+  background: rgba(22,68,117,0.55);
+-webkit-backdrop-filter: blur(1px);
+backdrop-filter: blur(1px);
+border: 1px solid rgba(22,68,117,0.275);
+}
             

@@ -5,12 +5,15 @@ import { BiArrowBack } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { RiDeleteBinLine } from "react-icons/ri";
+import ModalBuy from "../components/ModalBuy";
 
 const ShoppingCard = () => {
     const userOrder = useSelector((state) => state.user.user.orders);
     const [finalPrece, setfinalPrece] = useState(0);
     const [image, setImage] = useState("");
     const dispatch = useDispatch();
+    const [modalShow, setModalShow] = useState(false);
+
     /* 
        const user = useSelector((state) => state.user.user);
     const dispatch = useDispatch();
@@ -157,18 +160,26 @@ const ShoppingCard = () => {
                                     </span>{" "}
                                     Seguir Comprando
                                 </Link>
-                                <div>Total: {finalPrece}</div>
+                                <div className="fw-bold text-danger fs-4">
+                                    Total: $ {finalPrece}
+                                </div>
                             </div>
                         </Row>
-                        <Row className="col-3 mx-auto my-5">
+                        <Row className="col-lg- col-md-4 col-12  mx-auto my-5">
                             <Button
                                 variant="outline-success"
                                 size="lg"
-                                onClick={handleBuy}
+                                onClick={() => setModalShow(true)}
                             >
                                 Comprar
                             </Button>
                         </Row>
+                        <ModalBuy
+                            userOrder={userOrder}
+                            finalPrece={finalPrece}
+                            show={modalShow}
+                            onHide={() => setModalShow(false)}
+                        />
                     </Container>
                 ) : (
                     <>
