@@ -53,11 +53,15 @@ const ModalBuy = (props) => {
                             ))}
                         </tbody>
                     </table>
+                    <div className="text-center fw-bold fs-4 text-primary">
+                        $ {props.finalPrece}
+                    </div>
                 </Modal.Body>
                 <Modal.Footer>
                     <div className="d-flex justify-content-between">
-                        <div className="">{props.finalPrece}</div>
-                        <Button onClick={props.onHide}>Comprar</Button>
+                        <Button variant="success" onClick={props.onHide}>
+                            Comprar
+                        </Button>
                     </div>
                 </Modal.Footer>
             </div>
