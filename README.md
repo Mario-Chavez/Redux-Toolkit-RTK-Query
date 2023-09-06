@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://res.cloudinary.com/mach/image/upload/v1690740259/logoRestFood_po52of.png" alt="Captura de pantalla">
+  <img src="https://res.cloudinary.com/mach/image/upload/v1694005015/logo-new_dnl46m.png"  alt="Captura de pantalla" style="width: 250px; border: 1px solid #333; border-radius: 20px;">
 </p>
 
 # Sistema de Pedido de Restaurante en React
