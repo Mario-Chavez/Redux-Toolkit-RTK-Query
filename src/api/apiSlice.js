@@ -11,7 +11,7 @@ export const foodApi = createApi({
     endpoints: (builder) => ({
         // get all foods
         getFoods: builder.query({
-            query: () => "/platos",
+            query: () => "/",
         }),
         // get one food
         getOneFood: builder.query({
